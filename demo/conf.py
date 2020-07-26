@@ -53,3 +53,8 @@ html_static_path = ['_static']
 
 # Path to themes
 html_theme_path = ['../']
+
+#option for theme
+html_theme_options = {
+    'quicklinks' : [{'name': 'Unreal Website', 'link': 'https://www.unrealengine.com/en-US/'}]
+}

@@ -24,11 +24,21 @@ div.documentwrapper {
   flex-direction: row;
 }
 
+@media only screen and (max-width: 700px){
+  h1 {
+    padding: 0 0 0 30px !important;;
+  }
+}
+
 h1 {
   padding: 0 0 0 72px;
+  font-size: 1.5em;
   overflow: hidden;
   font-family: Brutal_Regular, Verdana, Arial, sans serif;
   height: 100%;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 h1 > a,
@@ -55,7 +65,7 @@ dt > a:visited {
 
 div.body {
   width: 100%;
-  min-width: 450px;
+  min-width: 0;
   max-width: none;
 }
 
@@ -96,6 +106,13 @@ div.body div.section:first-of-type h1 {
   padding: 2em 2em;
   color: #fff;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 700px){
+  div.body div.section:first-of-type h1 {
+      font-size: 1.675em;
+      padding: 2em 30px !important;;
+  }
 }
 
 div.body div.section:first-of-type h1 a{
@@ -262,6 +279,16 @@ div.code-block-caption:hover > a.headerlink {
 
 /*#region Sidebar */
 
+@media only screen and (max-width: 1280px) {
+  div#sidebar {
+    float: left;
+    position: fixed;
+    z-index: 1010;
+    background-color: white;
+    width: 300px!important;
+  }
+}
+
 div.sphinxsidebarwrapper {
   padding: 0 !important;
 }
@@ -319,13 +346,51 @@ div.gutter::after{
   /* transform: translate(-50%, 0); */
 }
 
-/* div.gutter:active::after{
-  display: none;
-} */
-
 div.gutter:active::before{
   display: none;
 }
+
+
+/*#region Navigation */
+
+@media only screen and (max-width: 1280px) {
+  div#navigation {
+      line-height: 1em;
+      font-size: 1.5em !important;
+      top: 145px !important;
+  }
+}
+
+div#navigation {
+  left: 300px;
+  transition: left .5s linear 0s;
+}
+
+div#navigation span {
+  opacity: .5;
+}
+
+div#navigation {
+  transform: translateY(0) rotate(0deg);
+  transform-origin: left center 0;
+  float: left;
+  margin: 0;
+  padding: 3px 8px;
+  position: fixed;
+  left: 300px;
+  top: 152px !important;
+  z-index: 1001;
+  background-color: #d8d8d8;
+  color: #000;
+  -webkit-box-shadow: 4px -3px 6px 0 rgba(50,50,50,.75);
+  -moz-box-shadow: 4px -3px 6px 0 rgba(50,50,50,.75);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0);
+  cursor: pointer;
+  border: 1px solid #a0a0a0;
+  font-size: 2.5em;
+}
+
+/*#endregion Navigation */
 
 /*#region Filter Pages */
 
