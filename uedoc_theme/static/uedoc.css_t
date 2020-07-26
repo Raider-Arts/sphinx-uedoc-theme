@@ -1,0 +1,368 @@
+@import 'basic.css';
+@import 'fonts.css';
+
+/** 
+  Debug Macro: jQuery(window).keydown(function(e) { if (e.keyCode == 123) debugger; });
+  Stops the page with the F12 key  
+**/
+
+/*#region Global */
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  font-size: 13px;
+  font-family: OpenSans_Regular, Verdana, Arial, sans serif;
+  color: #000;
+  line-height: 1.75em;
+  margin: 0;
+  padding: 0;
+}
+
+div.documentwrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  padding: 0 0 0 72px;
+  overflow: hidden;
+  font-family: Brutal_Regular, Verdana, Arial, sans serif;
+  height: 100%;
+}
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a,
+dt > a{
+  color: #000;
+  text-decoration: none;
+}
+
+h1 > a:visited,
+h2 > a:visited,
+h3 > a:visited,
+h4 > a:visited,
+h5 > a:visited,
+h6 > a:visited,
+dt > a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+div.body {
+  width: 100%;
+  min-width: 450px;
+  max-width: none;
+}
+
+p {
+  font-size: 1em;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+a:visited {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a {
+  color: #303030;
+}
+
+div.body div.section:first-of-type h1 {
+  width: 100%;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to left,
+    rgba(42, 42, 42, 0) 35%,
+    rgba(42, 42, 42, 0.95) 85%
+  );
+  background-image: -moz-linear-gradient(
+    right,
+    rgba(42, 42, 42, 0) 35%,
+    rgba(42, 42, 42, 0.95) 85%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fD2a2a2a',endColorstr='#002a2a2a',GradientType=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  margin: 0;
+  padding: 2em 2em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+div.body div.section:first-of-type h1 a{
+  color: #fff;
+}
+
+div.contents {
+  background-image: none !important;
+  filter: none !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+div.topic {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to left,
+    rgba(42, 42, 42, 0) 35%,
+    rgba(42, 42, 42, 0.95) 85%
+  );
+  background-image: -moz-linear-gradient(
+    right,
+    rgba(42, 42, 42, 0) 35%,
+    rgba(42, 42, 42, 0.95) 85%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fD2a2a2a',endColorstr='#002a2a2a',GradientType=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  margin: 0;
+  padding: 2em 2em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+}
+
+/*#endregion Global */
+
+/*#region Headerlink */
+
+a.headerlink {
+  text-decoration: none;
+  font-size: 14px;
+}
+
+h1:hover > a.headerlink,
+h2:hover > a.headerlink,
+h3:hover > a.headerlink,
+h4:hover > a.headerlink,
+h5:hover > a.headerlink,
+h6:hover > a.headerlink,
+dt:hover > a.headerlink,
+caption:hover > a.headerlink,
+p.caption:hover > a.headerlink,
+div.code-block-caption:hover > a.headerlink {
+  visibility: hidden;
+}
+
+h1:hover > a.headerlink::after,
+h2:hover > a.headerlink::after,
+h3:hover > a.headerlink::after,
+h4:hover > a.headerlink::after,
+h5:hover > a.headerlink::after,
+h6:hover > a.headerlink::after,
+dt:hover > a.headerlink::after,
+caption:hover > a.headerlink::after,
+p.caption:hover > a.headerlink::after,
+div.code-block-caption:hover > a.headerlink {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c1";
+  visibility: visible;
+}
+/*#endregion Headerlink */
+
+/*#region Header */
+
+.uedoc-header {
+  width: 100%;
+  clear: both;
+  height: 54px;
+  background-color: #2a2a2a;
+  display: flex;
+  align-items: center;
+}
+
+.uedoc-title {
+  color: white;
+  font-family: Verdana;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin: 0 40px 0 20px;
+}
+
+.uedoc-logo {
+  width: 3.7em;
+  height: 3.7em;
+  margin-left: .5em;
+  background: url('{{theme_logo}}') 50% no-repeat;
+  background-size: 50px auto;
+}
+
+.uedoc-quicklinks {
+  list-style-type: none;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.uedoc-quicklinks li {
+  position: relative;
+  height: 100%;
+}
+
+.uedoc-quicklinks-wrapper {
+  height: 100%;
+}
+
+.uedoc-quicklinks li::before {
+  background: #0aaff1;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  -webkit-transition: height .2s ease-in-out;
+  -o-transition: height .2s ease-in-out;
+  transition: height .2s ease-in-out;
+}
+
+.uedoc-quicklinks li:hover::before {
+  height: 5px;
+}
+
+.uedoc-quicklinks p {
+  color: #ccc;
+  margin: 0;
+  font-size: .85em;
+}
+
+
+.uedoc-quicklinks a {
+  display: block;
+  font-family: OpenSans,sans-serif,arial;
+  text-transform: uppercase;
+  letter-spacing: .075em;
+  padding: 0 1em;
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.uedoc-quicklinks a:visited {
+  text-decoration: none;
+}
+
+/*#endregion Header */
+
+/*#region Sidebar */
+
+div.sphinxsidebarwrapper {
+  padding: 0 !important;
+}
+
+div.sphinxsidebar {
+  float: none;
+  width: 100%;
+  margin-left: 0;
+  font-size: initial;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+div.gutter {
+  position: relative;
+  cursor: col-resize;
+  z-index: 1002;
+}
+
+div.gutter::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 0px;
+  background-color: #e0e0e0;
+  transform: translate(-4px);
+}
+
+
+div.gutter {
+  width: 3px !important;
+}
+
+div.gutter:hover::before{
+  width: 11px;
+}
+
+div.gutter:active::after {
+  transform: translate(-4px);
+  width: 11px;
+  background-color: #a0a0a0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAASCAYAAACXScT7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM4RDA5RjlGNDJENTExRTk4MUI5QTIwMTNCRUNFMTNGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM4RDA5RkEwNDJENTExRTk4MUI5QTIwMTNCRUNFMTNGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QzhEMDlGOUQ0MkQ1MTFFOTgxQjlBMjAxM0JFQ0UxM0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QzhEMDlGOUU0MkQ1MTFFOTgxQjlBMjAxM0JFQ0UxM0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5oEJXHAAAAMklEQVR42mL8//+/FAMDgxoQ3wLiZ0CM4AMlHf5DAIiWQuYzMeABo5KDUZIRX2QDBBgArdgkUqL+RmoAAAAASUVORK5CYII=');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 7px 18px;
+}
+
+div.gutter::after{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 3px;
+  /* left: 50%; */
+  background-color: #c0c0c0;
+  /* transform: translate(-50%, 0); */
+}
+
+/* div.gutter:active::after{
+  display: none;
+} */
+
+div.gutter:active::before{
+  display: none;
+}
+
+/*#region Filter Pages */
+
+form.search {
+  padding: 1px 0 1px 1px;
+}
+
+div.sphinxsidebar form {
+  margin-top: 0 !important;
+}
+
+#searchbox input {
+  position: relative;
+  height: 32px;
+  width: calc(100% - 32px) !important;
+  padding: 4px 16px !important;
+  border-width: 0 0 1px 0;
+  border-color: #767676;
+  box-sizing: initial !important;
+  font-family: Arial;
+  font-size: 0.85em;
+}
+
+/*#endregion Filter Pages  */
+
+/*#endregion Sidebar */
+
+
+/*#region Related */
+
+div.related {
+  height: 83px;
+  padding: 0;
+  border-bottom: 1px solid #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/*#endregion Related */
