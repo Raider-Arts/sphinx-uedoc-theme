@@ -1,0 +1,42 @@
+{% extends "basic/layout.html" %}
+
+{# Setting up scripts #}
+{% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"] %}
+{% set script_files = script_files + ["_static/scripts/utilities.js"] %}
+{% set script_files = script_files + ["_static/scripts/splitter.js"] %}
+{% set script_files = script_files + ["_static/scripts/filter-pages.js"] %}
+{% set script_files = script_files + ["https://kit.fontawesome.com/dff6b54517.js"] %}
+
+{% block header %}
+	{% include 'header.html' %}
+{% endblock header %}
+
+{% block document %}
+	<div class="documentwrapper">
+		{% block uedoc_sidebar %}
+			{%- if render_sidebar %}
+				<div id="sidebar">
+					{{sidebar()}}
+				</div>
+			{%- endif %}
+		{% endblock uedoc_sidebar %}
+		{%- if render_sidebar %}
+		<div class="bodywrapper" id="document">
+		{%- endif %}
+			<div class="body" role="main">
+			{% block body %} {% endblock %}
+			<div class="clearer"></div>
+			</div>
+		{%- if render_sidebar %}
+		</div>
+		{%- endif %}
+	</div>
+{% endblock document %}
+
+{% block relabar2 %}
+	{# override relabar2 location when dont want the relbar here #}
+{% endblock relabar2 %}
+
+{%- block sidebar2 %}
+	{# override sidebar2 location when dont want the sidebar here #}
+{% endblock %}
