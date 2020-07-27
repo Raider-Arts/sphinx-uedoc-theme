@@ -15,7 +15,7 @@ function createSplitter() {
 		splitter.destroy()
 		splitter = null
 	}
-	if (!isMobile() || $(document).width() > 1280) {
+	if (!isMobile()) {
 		splitter = window.Split(['#sidebar', '#document'], {
 			sizes: [18, 72],
 			minSize: [300, 450],
