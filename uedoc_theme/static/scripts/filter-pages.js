@@ -1,4 +1,7 @@
-var filterPages = function () {
+/**
+ * Filter the ul list of the sidebar
+ */
+function filterPages() {
 	var input = $(this).val()
 	$('#uedoc-localtoc  li').each(function () {
 		var txtValue = $(this).text()
@@ -14,8 +17,6 @@ var filterPages = function () {
 }
 
 $(window).on('load', function () {
-	console.log('test')
-	console.log($('#uedoc-filter'))
 	$('#uedoc-filter').on('input', filterPages)
 	$('#uedoc-filter').on('propertychange', filterPages)
 })
