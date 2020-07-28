@@ -398,29 +398,25 @@ div.gutter:active::before{
 @media only screen and (max-width: 1280px) {
   div#navigation {
       line-height: 1em;
-      font-size: 1.5em !important;
-      top: 145px !important;
+      font-size: 1.5em;
+      top: 145px;
   }
 }
 
-div#navigation {
-  left: 300px;
-  transition: left .5s linear 0s;
-}
-
-div#navigation span {
+#navigation span {
   opacity: .5;
 }
 
-div#navigation {
+#navigation {
   transform: translateY(0) rotate(0deg);
+  transition: left .5s linear 0s;
   transform-origin: left center 0;
   float: left;
   margin: 0;
   padding: 3px 8px;
   position: fixed;
   left: 300px;
-  top: 152px !important;
+  top: 152px;
   z-index: 1001;
   background-color: #d8d8d8;
   color: #000;
@@ -435,6 +431,12 @@ div#navigation {
 /*#endregion Navigation */
 
 /*#region Filter Pages */
+
+@media only screen and (max-width: 1280px) {
+  div#searchbox{
+    padding-right: 42px;
+  }
+}
 
 form.search {
   padding: 1px 0 1px 1px;
