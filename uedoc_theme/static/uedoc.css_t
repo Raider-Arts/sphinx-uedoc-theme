@@ -204,6 +204,24 @@ div.code-block-caption:hover > a.headerlink {
   align-items: center;
 }
 
+@media only screen and (max-width: 1280px) {
+  div.uedoc-title {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  div.uedoc-title {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  div.uedoc-title {
+    font-size: 1em;
+  }
+}
+
 .uedoc-title {
   color: white;
   font-family: Verdana;
