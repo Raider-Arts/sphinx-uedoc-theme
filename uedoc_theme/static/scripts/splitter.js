@@ -17,7 +17,7 @@ function createSplitter() {
 	}
 	if (!isMobile()) {
 		splitter = window.Split(['#sidebar', '#document'], {
-			sizes: [18, 72],
+			sizes: [18, 100],
 			minSize: [300, 450],
 		})
 	}	
