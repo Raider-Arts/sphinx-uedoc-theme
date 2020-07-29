@@ -7,6 +7,31 @@
 {% set script_files = script_files + ["_static/scripts/filter-pages.js"] %}
 {% set script_files = script_files + ["_static/scripts/sidebar.js"] %}
 {% set script_files = script_files + ["https://kit.fontawesome.com/dff6b54517.js"] %}
+{% set reldelim1 = ">" %}
+
+{%- macro uedoc_relbar() %}
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>{{ _('Navigation') }}</h3>
+      <ul>
+        {%- for rellink in rellinks %}
+        <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
+          <a href="{{ pathto(rellink[0])|e }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
+        {%- endfor %}
+		{%- block rootrellink %}
+		<li class="nav-item nav-item-0"><a href="{{ pathto(master_doc)|e }}">{{ shorttitle|e }}</a><span class="separator">{{ reldelim1 }}</span></li>
+		{%- endblock %}
+        {%- for parent in parents %}
+          <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a><span class="separator">{{ reldelim1 }}</span></li>
+        {%- endfor %}
+        <li class="nav-item nav-item-this"><span id="page">{{ title }}</span></a></li>
+        {%- block relbaritems %} {% endblock %}
+      </ul>
+    </div>
+{%- endmacro %}
+
+{%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}
 
 {% block header %}
 	{% include 'header.html' %}

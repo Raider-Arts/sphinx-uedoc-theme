@@ -465,6 +465,8 @@ div.sphinxsidebar form {
 
 /*#region Related */
 
+
+
 div.related {
   height: 83px;
   padding: 0;
@@ -474,6 +476,37 @@ div.related {
   align-items: center;
 }
 
+div.related ul {
+  padding: 28px;
+  font-family: Brutal_Regular,Verdana,Arial,sans serif;
+  font-size: 1.3em;
+  float: left;
+  /* width: calc(100% - 630px); */
+  display: block;
+}
+
+@media only screen and (max-width: 1280px) {
+  div.related ul {
+    display: none;
+  }
+}
+
+div.related a {
+  text-decoration: none;
+  opacity: 1;
+  color: #000;
+}
+
+span.separator {
+  margin: 0 6px;
+  opacity: .3;
+}
+
+ul span#page {
+  color: #000;
+  opacity: .75;
+  padding-right: 42px;
+}
 /*#endregion Related */
 
 

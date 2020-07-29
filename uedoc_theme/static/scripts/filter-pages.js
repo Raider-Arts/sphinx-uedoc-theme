@@ -3,7 +3,7 @@
  */
 function filterPages() {
 	var input = $(this).val()
-	$('#uedoc-localtoc  li').each(function () {
+	$('#uedoc-globaltoc  li').each(function () {
 		var txtValue = $(this).text()
 		console.log(txtValue)
 		if (txtValue) {
