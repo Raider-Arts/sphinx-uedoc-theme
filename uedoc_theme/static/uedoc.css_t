@@ -517,6 +517,36 @@ div.sphinxsidebar form {
 
 /*#endregion Sidebar */
 
+/*#region localtoc */
+
+@media only screen and (max-width: 1280px) {
+  div#localtoc {
+    display: none;
+  }
+}
+
+div#localtoc {
+  float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+div.localtocwrapper {
+  position: sticky;
+  top: 255px;
+  width: 312px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  font-family: Brutal_Regular,Verdana,Arial,sans serif;
+  display: block;
+  margin: 20px 36px 20px 0;
+  overflow: hidden auto;
+  text-overflow: ellipsis;
+}
+
+/*#endregion localtoc */
 
 /*#region Related */
 
@@ -563,7 +593,6 @@ ul span#page {
   padding-right: 42px;
 }
 /*#endregion Related */
-
 
 /* DEUBUG LAYOUT */
 /* * {

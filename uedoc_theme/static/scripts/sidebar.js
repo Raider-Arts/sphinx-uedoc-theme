@@ -43,3 +43,10 @@ function calcSidebarHeight() {
 }
 $(window).on('load', calcSidebarHeight)
 $(window).on('resize', calcSidebarHeight)
+
+function calcLocalTocMaxHeight() {
+	var localtocmaxheight = String($(window).height() - 285) + 'px'
+	$('div.localtocwrapper').css('max-height', localtocmaxheight)
+}
+$(window).on('load', calcLocalTocMaxHeight)
+$(window).on('resize', calcLocalTocMaxHeight)

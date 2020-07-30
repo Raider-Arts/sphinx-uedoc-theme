@@ -1,4 +1,8 @@
 {%- if display_toc %}
-  <h3><a href="{{ pathto(master_doc)|e }}">{{ _('Table of Contents') }}</a></h3>
-  <div id="uedoc-localtoc">{{ toc }}</div>
+  <div id="localtoc">
+    <div class="localtocwrapper">
+      <h3><a href="{{ pathto(master_doc)|e }}">{{ _('Table of Contents') }}</a></h3>
+      <div id="uedoc-localtoc">{{ toc }}</div>
+    </div>
+  </div>
 {%- endif %}
