@@ -26,14 +26,7 @@ div.documentwrapper {
   flex-direction: row;
 }
 
-@media only screen and (max-width: 700px){
-  h1 {
-    padding: 0 0 0 30px !important;;
-  }
-}
-
 h1 {
-  padding: 0 0 0 72px;
   font-size: 1.5em;
   overflow: hidden;
   font-family: Brutal_Regular, Verdana, Arial, sans serif;
@@ -100,6 +93,11 @@ div.body{
 }
 
 @media only screen and (max-width: 1280px) {
+
+  .bodywrapper div.body div.section:first-of-type h1 {
+    margin: -10px 0 0 -47px;
+  }
+
   div.body {
     padding: 10px 30px 30px;
     width: auto;
@@ -132,18 +130,26 @@ div.body div.section:first-of-type h1 {
   position: relative;
   display: inline-block;
   font-size: 2em;
-  margin: 0;
   padding-top: 2em;
   padding-bottom: 2em;
+  padding-left: 72px;
   color: #fff;
   margin: -47px 0 0 -72px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
 }
 
-@media only screen and (max-width: 700px){
-  div.body div.section:first-of-type h1 {
+
+@media only screen and (max-width: 1280px){
+  .bodywrapper div.body div.section:first-of-type h1 {
       font-size: 1.675em;
-      padding: 2em 30px !important;
+      padding: 2em 47px;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .bodywrapper div.body div.section:first-of-type h1 {
+      font-size: 1.675em;
+      padding: 2em 47px !important;
   }
 }
 
