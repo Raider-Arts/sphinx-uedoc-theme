@@ -352,6 +352,100 @@ div.code-block-caption:hover > a.headerlink {
 
 /*#region Sidebar */
 
+div#sidebar ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+div#sidebar li {
+  font-size: 14px !important;
+  background-color: transparent;
+  position: relative;
+  line-height: 1.75em;
+}
+
+div#sidebar li a {
+  margin-left: 45px;
+}
+
+div#sidebar li li a {
+  margin-left: 65px;
+}
+
+div#sidebar li li li a {
+  margin-left: 85px;
+}
+
+div#sidebar li li li li a {
+  margin-left: 105px;
+}
+
+div#sidebar li::before {
+  left: 25px;
+}
+
+div#sidebar li li::before {
+  left: 50px;
+}
+
+div#sidebar li li li::before {
+  left: 70px;
+}
+
+div#sidebar li li li li::before {
+  left: 90px;
+}
+
+div#sidebar li::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 11px;
+  height: 11px;
+  background: url(./images/button-closed.png) no-repeat !important;
+  cursor: pointer;
+  z-index: 1010;
+} 
+
+div#sidebar a {
+  display: block;
+  /* position: relative; */
+  padding: 10px 5px 10px 5px;
+  text-decoration: none;
+  opacity: 1;
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: Brutal_Regular;
+
+}
+div#sidebar a span {
+  z-index: 1010;
+  position: relative;
+  pointer-events: none;
+}
+
+.sidebar-list-hover-wrapper{
+  left: -45px;
+  width: calc(100% + 45px);
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
+.sidebar-list-hover{
+  width: 100%;
+  height: 100%;
+  position: static;
+}
+
+.sidebar-list-hover:hover{
+  background-color: #f0f0f0;
+}
+
 .sidebar-retracted {
   left: -300px !important;
   float: left;

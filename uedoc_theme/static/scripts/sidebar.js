@@ -50,3 +50,16 @@ function calcLocalTocMaxHeight() {
 }
 $(window).on('load', calcLocalTocMaxHeight)
 $(window).on('resize', calcLocalTocMaxHeight)
+
+
+$(window).on('load', function () {
+	$('#sidebar li a').each(function () {
+		var wrapper = $('<div> </div>').addClass('sidebar-list-hover-wrapper');
+		wrapper.css('height', String($(this).outerHeight()) + "px");
+		wrapper.append($('<div> </div>').addClass('sidebar-list-hover'));
+		$(this).append(wrapper)
+		$(this).contents()
+        .filter(function(){return this.nodeType === 3})
+        .wrap('<span />');
+	})
+})
