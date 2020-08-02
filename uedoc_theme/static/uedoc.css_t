@@ -382,32 +382,41 @@ div#sidebar li li li li a {
   margin-left: 105px;
 }
 
-div#sidebar li::before {
+div#sidebar li span.button {
   left: 25px;
 }
 
-div#sidebar li li::before {
+div#sidebar li li span.button {
   left: 50px;
 }
 
-div#sidebar li li li::before {
+div#sidebar li li li span.button {
   left: 70px;
 }
 
-div#sidebar li li li li::before {
+div#sidebar li li li li span.button {
   left: 90px;
 }
 
-div#sidebar li::before {
+div#sidebar li span.button {
   content: "";
   position: absolute;
   top: 15px;
   width: 11px;
   height: 11px;
-  background: url(./images/button-closed.png) no-repeat !important;
   cursor: pointer;
   z-index: 1010;
-} 
+  cursor: pointer;
+}
+
+.sidebar-item-expanded span.button{
+  background: url(./images/button-open.png) no-repeat !important;
+}
+
+.sidebar-item-collapsed span.button{
+  background: url(./images/button-closed.png) no-repeat !important;
+}
+
 
 div#sidebar a {
   display: block;
@@ -420,12 +429,16 @@ div#sidebar a {
   white-space: nowrap;
   overflow: hidden;
   font-family: Brutal_Regular;
-
 }
+
 div#sidebar a span {
   z-index: 1010;
   position: relative;
-  pointer-events: none;
+  /* pointer-events: none; */
+}
+
+li.sidebar-no-item-toggle span.button {
+  display: none;
 }
 
 .sidebar-list-hover-wrapper{

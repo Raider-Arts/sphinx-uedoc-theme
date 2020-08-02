@@ -51,15 +51,84 @@ function calcLocalTocMaxHeight() {
 $(window).on('load', calcLocalTocMaxHeight)
 $(window).on('resize', calcLocalTocMaxHeight)
 
+/**
+ * function that collapse or show clicked list item children
+ * of the sidebar unordered list
+ */
+function sidebar_item_click() {
+	event.preventDefault()
+	event.stopPropagation()
+	aParent = $(this).parent()
+	/** if not present initialize the current state */
+	if (aParent.data('state') == undefined) {
+		aParent.data('state', false)
+	}
+	/** change the button icon (::before pseudo element) of the list item based on the state */
+	var state = !aParent.data('state')
+	if (state) {
+		aParent.removeClass('sidebar-item-expanded')
+		aParent.addClass('sidebar-item-collapsed')
+		aParent.data('state', true)
+	} else {
+		aParent.addClass('sidebar-item-expanded')
+		aParent.removeClass('sidebar-item-collapsed')
+		aParent.data('state', false)
+	}
+	/** Show or hide based on the previus state */
+	aParent.parent().find('li').each(function () {
+		if (!state) {
+			$(this).css('display', 'block')
+		} else {
+			$(this).css('display', 'none')
+		}
+	});
+}
 
+/**
+ * Sidebar List items initialization
+ */
 $(window).on('load', function () {
+	/** 
+	 * Add some needed html DOM element to create the hover effect
+	 * based on this SO solution https://stackoverflow.com/q/12013066/6791579
+	 */
 	$('#sidebar li a').each(function () {
+
+		var button = $("<span> </span>").addClass("button")
+		$(this).append(button)
+
 		var wrapper = $('<div> </div>').addClass('sidebar-list-hover-wrapper');
 		wrapper.css('height', String($(this).outerHeight()) + "px");
 		wrapper.append($('<div> </div>').addClass('sidebar-list-hover'));
 		$(this).append(wrapper)
 		$(this).contents()
+
         .filter(function(){return this.nodeType === 3})
-        .wrap('<span />');
+			.wrap('<span />');
 	})
+
+	/**
+	 * Initialize the list items of the sidebar
+	 */
+	$('#sidebar li').each(function () {
+		console.log($(this).find('li').length)
+		var state = $(this).data('state')
+		if (state) {
+			$(this).removeClass('sidebar-item-expanded')
+			$(this).addClass('sidebar-item-collapsed')
+		} else {
+			$(this).addClass('sidebar-item-expanded')
+			$(this).removeClass('sidebar-item-collapsed')
+		}
+		if ($(this).find('li').length == 0) {
+			$(this).addClass('sidebar-no-item-toggle');
+		}
+	})
+	/**
+	 * Add the onclick function to the list items
+	 */
+	$('#sidebar li a span.button').on('click', sidebar_item_click);
 })
+
+
+
