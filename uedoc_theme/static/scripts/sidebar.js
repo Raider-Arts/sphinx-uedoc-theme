@@ -40,15 +40,14 @@ function calcSidebarHeight() {
 	} else {
 		$('div.sphinxsidebar').css('height', String(sidebarHeight)+'px')
 	}
-
-	var slidebarWidgets = $('div.sphinxsidebarwrapper').children()
-	slidebarWidgets.slice(2, slidebarWidgets.length).wrapAll("<div id='sidebarwidgets' />")
-	console.log($('div#sidebarwidgets'))
+	if ($('div#sidebarwidgets').length == 0) {
+		var slidebarWidgets = $('div.sphinxsidebarwrapper').children()
+		slidebarWidgets.slice(2, slidebarWidgets.length).wrapAll("<div id='sidebarwidgets' />")
+	}
 	$('div#sidebarwidgets').css('height', String(sidebarHeight-($('div#navigation').height()+$('div#searchbox').height()))+'px')
 }
 $(window).on('load', calcSidebarHeight)
 $(window).on('resize', calcSidebarHeight)
-
 
 function calcLocalTocMaxHeight() {
 	var localtocmaxheight = String($(window).height() - 285) + 'px'
