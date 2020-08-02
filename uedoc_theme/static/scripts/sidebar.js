@@ -34,15 +34,21 @@ $(window).on('load', function () {
 $(window).on('resize', displayMobileSidebar)
 
 function calcSidebarHeight() {
-	var sidebarHeight = String($(window).height() - ($('#head').height() + $('div.related').height())) + 'px'
+	var sidebarHeight = $(window).height() - ($('#head').height() + $('div.related').height())
 	if (!isMobile()) {
-		$('#sidebar').css('height', sidebarHeight)
+		$('#sidebar').css('height', String(sidebarHeight)+'px')
 	} else {
-		$('div.sphinxsidebar').css('height', sidebarHeight)
+		$('div.sphinxsidebar').css('height', String(sidebarHeight)+'px')
 	}
+
+	var slidebarWidgets = $('div.sphinxsidebarwrapper').children()
+	slidebarWidgets.slice(2, slidebarWidgets.length).wrapAll("<div id='sidebarwidgets' />")
+	console.log($('div#sidebarwidgets'))
+	$('div#sidebarwidgets').css('height', String(sidebarHeight-($('div#navigation').height()+$('div#searchbox').height()))+'px')
 }
 $(window).on('load', calcSidebarHeight)
 $(window).on('resize', calcSidebarHeight)
+
 
 function calcLocalTocMaxHeight() {
 	var localtocmaxheight = String($(window).height() - 285) + 'px'
@@ -52,7 +58,6 @@ $(window).on('load', calcLocalTocMaxHeight)
 $(window).on('resize', calcLocalTocMaxHeight)
 
 function recalculate_tree_state(liElement) {
-	// console.log(liElement)
 	var state = liElement.children('a').data('state')
 	liElement.find('li').each(function () {
 		if (!state) {
@@ -68,16 +73,12 @@ function recalculate_tree_state(liElement) {
 
 /**
  * function that collapse or show clicked list item children
- * of the sidebar unordered list
+ * of the sidebar unordered list, the current state is stored in the a element of each list item
  */
 function sidebar_item_click() {
 	event.preventDefault()
 	event.stopPropagation()
 	aParent = $(this).parent()
-	// /** if not present initialize the current state */
-	// if (aParent.data('state') == undefined) {
-	// 	aParent.data('state', false)
-	// }
 	/** change the button icon (::before pseudo element) of the list item based on the state */
 	var state = aParent.data('state')
 	aParent.data('state', !state)
@@ -105,9 +106,9 @@ $(window).on('load', function () {
 		var button = $("<span> </span>").addClass("button")
 		$(this).append(button)
 
-		var wrapper = $('<div> </div>').addClass('sidebar-list-hover-wrapper');
-		wrapper.css('height', String($(this).outerHeight()) + "px");
-		wrapper.append($('<div> </div>').addClass('sidebar-list-hover'));
+		var wrapper = $('<div> </div>').addClass('sidebar-list-hover-wrapper')
+		wrapper.css('height', String($(this).outerHeight()) + "px")
+		wrapper.append($('<div> </div>').addClass('sidebar-list-hover'))
 		$(this).append(wrapper)
 		$(this).contents()
 
@@ -132,14 +133,11 @@ $(window).on('load', function () {
 			$(this).removeClass('sidebar-item-collapsed')
 		}
 		if ($(this).find('li').length == 0) {
-			$(this).addClass('sidebar-no-item-toggle');
+			$(this).addClass('sidebar-no-item-toggle')
 		}
 	})
 	/**
 	 * Add the onclick function to the list items
 	 */
-	$('#sidebar li a span.button').on('click', sidebar_item_click);
+	$('#sidebar li a span.button').on('click', sidebar_item_click)
 })
-
-
-
