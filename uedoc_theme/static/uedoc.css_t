@@ -78,6 +78,29 @@ a {
   color: #303030;
 }
 
+html {
+  --scrollbarBG: transparent;
+  --thumbBG: rgba(208, 208, 208, 0.6);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+}
+
 
 /*#endregion Global */
 
@@ -352,6 +375,17 @@ div.code-block-caption:hover > a.headerlink {
 
 /*#region Sidebar */
 
+div#sidebar::-webkit-scrollbar {
+  width: 11px;
+  right: 3px;
+  z-index: 1020;
+}
+
+div#sidebarwidgets{
+  overflow: hidden auto;
+  margin-right: 2px;
+}
+
 div#sidebar ul {
   margin: 0;
   padding: 0;
@@ -494,7 +528,7 @@ div#sidebar a {
 div#sidebar{
   position: sticky;
   top: 0;
-  overflow: auto;
+  /* overflow: auto; */
   white-space: nowrap;
   transition: left .5s linear 0s;
 }
@@ -509,7 +543,7 @@ div.sphinxsidebar {
   width: 100%;
   margin-left: 0;
   font-size: initial;
-  overflow: hidden auto;
+  overflow: hidden;
 }
 
 div.gutter {
