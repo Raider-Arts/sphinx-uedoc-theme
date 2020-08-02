@@ -51,6 +51,21 @@ function calcLocalTocMaxHeight() {
 $(window).on('load', calcLocalTocMaxHeight)
 $(window).on('resize', calcLocalTocMaxHeight)
 
+function recalculate_tree_state(liElement) {
+	// console.log(liElement)
+	var state = liElement.children('a').data('state')
+	liElement.find('li').each(function () {
+		if (!state) {
+			$(this).css('display', 'block')
+		} else {
+			$(this).css('display', 'none')
+		}
+	});
+	liElement.find('li').each(function () {
+		recalculate_tree_state($(this))
+	})
+}
+
 /**
  * function that collapse or show clicked list item children
  * of the sidebar unordered list
@@ -59,29 +74,22 @@ function sidebar_item_click() {
 	event.preventDefault()
 	event.stopPropagation()
 	aParent = $(this).parent()
-	/** if not present initialize the current state */
-	if (aParent.data('state') == undefined) {
-		aParent.data('state', false)
-	}
+	// /** if not present initialize the current state */
+	// if (aParent.data('state') == undefined) {
+	// 	aParent.data('state', false)
+	// }
 	/** change the button icon (::before pseudo element) of the list item based on the state */
-	var state = !aParent.data('state')
-	if (state) {
+	var state = aParent.data('state')
+	aParent.data('state', !state)
+	if (!state) {
 		aParent.removeClass('sidebar-item-expanded')
 		aParent.addClass('sidebar-item-collapsed')
-		aParent.data('state', true)
 	} else {
 		aParent.addClass('sidebar-item-expanded')
 		aParent.removeClass('sidebar-item-collapsed')
-		aParent.data('state', false)
 	}
 	/** Show or hide based on the previus state */
-	aParent.parent().find('li').each(function () {
-		if (!state) {
-			$(this).css('display', 'block')
-		} else {
-			$(this).css('display', 'none')
-		}
-	});
+	recalculate_tree_state(aParent.parent())
 }
 
 /**
@@ -111,6 +119,9 @@ $(window).on('load', function () {
 	 * Initialize the list items of the sidebar
 	 */
 	$('#sidebar li').each(function () {
+		if ($(this).children('a').data('state') == undefined) {
+			$(this).children('a').data('state', false)
+		}
 		console.log($(this).find('li').length)
 		var state = $(this).data('state')
 		if (state) {
