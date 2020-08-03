@@ -1,4 +1,6 @@
-
+/**
+ * Hightlight the correct locatoc list item based on its position when the user scroll the page
+ */
 $(window).on('load', function () {
 
 	var sections = $('div.section')

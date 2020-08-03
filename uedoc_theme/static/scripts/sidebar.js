@@ -1,5 +1,8 @@
 var sideopen = false
 
+/**
+ * Setup the sidebar based on the screen size
+ */
 function displayMobileSidebar() {
 	if (isMobile()) {
 		$('#navigation').css('left', '0')
@@ -33,6 +36,9 @@ $(window).on('load', function () {
 
 $(window).on('resize', displayMobileSidebar)
 
+/**
+ * Setup the height size of the sidebar to always occupied the remains height of the page
+ */
 function calcSidebarHeight() {
 	var sidebarHeight = $(window).height() - ($('#head').height() + $('div.related').height())
 	if (!isMobile()) {
@@ -49,6 +55,9 @@ function calcSidebarHeight() {
 $(window).on('load', calcSidebarHeight)
 $(window).on('resize', calcSidebarHeight)
 
+/**
+ * Setup the height size of the localtoc sidebar
+ */
 function calcLocalTocMaxHeight() {
 	var localtocmaxheight = String($(window).height() - 285) + 'px'
 	$('div.localtocwrapper').css('max-height', localtocmaxheight)
@@ -56,6 +65,11 @@ function calcLocalTocMaxHeight() {
 $(window).on('load', calcLocalTocMaxHeight)
 $(window).on('resize', calcLocalTocMaxHeight)
 
+/**
+ * Recursively traverse the unordered list of the sidebar to 
+ * collapse or show the list items
+ * @param {JQuery element} liElement 
+ */
 function recalculate_tree_state(liElement) {
 	var state = liElement.children('a').data('state')
 	liElement.find('li').each(function () {
@@ -143,7 +157,7 @@ $(window).on('load', function () {
 $(window).on('load', function () {
 	var currpage = $('div.related li.nav-item-this').children().text()
 	$('#sidebar li').each(function () {
-		if ($(this).children('a').text().trim() === $('div.related li.nav-item-this').children().text().trim()) {
+		if ($(this).children('a').text().trim() === currpage.trim()) {
 			$(this).addClass('selected-link')
 		} else {
 			$(this).removeClass('selected-link')
