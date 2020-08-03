@@ -47,6 +47,29 @@ dt > a{
   text-decoration: none;
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.75em;
+  line-height: 1em;
+  margin-bottom: 1.25em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 4px 6px 5px;
+  font-size: 1.5em;
+  font-weight: bold;
+  clear: both;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
 h1 > a:visited,
 h2 > a:visited,
 h3 > a:visited,
@@ -451,6 +474,22 @@ div#sidebar li span.button {
   background: url(./images/button-closed.png) no-repeat !important;
 }
 
+div#sidebarwidgets > :not(#uedoc-globaltoc) {
+  margin-left: 20px;
+}
+
+div#sidebarwidgets > h3 {
+  display: none;
+}
+
+div#sidebar h3, 
+div#sidebar h4,
+div#sidebar h5,
+div#sidebar h6 {
+  font-size: 1em;
+  margin-left: 0;
+  margin-right: 0;
+}
 
 div#sidebar a {
   display: block;
@@ -666,6 +705,61 @@ div.sphinxsidebar form {
 
 /*#region localtoc */
 
+div#uedoc-localtoc .current-reading > a{
+  background-color: #d8d8d8;
+  font-weight: bold;
+}
+
+div#localtoc h3 {
+  position: relative;
+  line-height: 1.3em;
+  font-weight: bold;
+  border-radius: 0 0 0 0;
+  font-size: 1em;
+  color: #000;
+  letter-spacing: 1px;
+  font-family: Brutal_Regular,Verdana,Arial,sans serif;
+  text-transform: uppercase;
+  height: 14px;
+  padding: 0 20px;
+}
+
+div#uedoc-localtoc ul {
+  list-style: none;
+  padding: 0;
+  margin: .325em 14px 0 30px;
+}
+
+div#uedoc-localtoc li ul {
+  margin: .325em 0 0 0;
+  padding: 0;
+}
+
+div#uedoc-localtoc li {
+  line-height: 2.5em;
+}
+
+div#uedoc-localtoc li a {
+  color: #000;
+  opacity: 1;
+  display: block;
+  padding: 8px 8px;
+  text-decoration: none;
+  position: relative;
+}
+
+div#uedoc-localtoc li li a {
+  padding-left: 20px;
+}
+
+div#uedoc-localtoc li li li a {
+  padding-left: 40px;
+}
+
+div#uedoc-localtoc li li li li a {
+  padding-left: 60px;
+}
+
 @media only screen and (max-width: 1280px) {
   div#localtoc {
     display: none;
@@ -674,15 +768,15 @@ div.sphinxsidebar form {
 
 div#localtoc {
   float: right;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 
 div.localtocwrapper {
   position: sticky;
-  top: 255px;
+  top: 20px;
   width: 312px;
   background: #fff;
   border: 1px solid #e0e0e0;
