@@ -397,6 +397,13 @@ div.code-block-caption:hover > a.headerlink {
 /*#endregion Header */
 
 /*#region Sidebar */
+div#sidebar li.selected-link > a{
+  font-weight: bold;
+}
+
+div#sidebar li.selected-link > a div.sidebar-list-hover-wrapper{
+  background-color: #d8d8d8;
+}
 
 div#sidebar::-webkit-scrollbar {
   width: 11px;
@@ -516,7 +523,7 @@ li.sidebar-no-item-toggle span.button {
 
 .sidebar-list-hover-wrapper{
   left: -45px;
-  width: calc(100% + 45px);
+  width: calc(100% + 43px);
   content: "";
   position: absolute;
   top: 0;

@@ -122,7 +122,6 @@ $(window).on('load', function () {
 		if ($(this).children('a').data('state') == undefined) {
 			$(this).children('a').data('state', false)
 		}
-		console.log($(this).find('li').length)
 		var state = $(this).data('state')
 		if (state) {
 			$(this).removeClass('sidebar-item-expanded')
@@ -139,4 +138,15 @@ $(window).on('load', function () {
 	 * Add the onclick function to the list items
 	 */
 	$('#sidebar li a span.button').on('click', sidebar_item_click)
+})
+
+$(window).on('load', function () {
+	var currpage = $('div.related li.nav-item-this').children().text()
+	$('#sidebar li').each(function () {
+		if ($(this).children('a').text().trim() === $('div.related li.nav-item-this').children().text().trim()) {
+			$(this).addClass('selected-link')
+		} else {
+			$(this).removeClass('selected-link')
+		}
+	})
 })
