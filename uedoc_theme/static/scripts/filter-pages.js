@@ -5,7 +5,6 @@ function filterPages() {
 	var input = $(this).val()
 	$('#uedoc-globaltoc  li').each(function () {
 		var txtValue = $(this).text()
-		console.log(txtValue)
 		if (txtValue) {
 			if (txtValue.toUpperCase().indexOf(input.toUpperCase()) > -1) {
 				$(this).css('display', '');
