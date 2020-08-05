@@ -302,6 +302,32 @@ div.admonition {
   text-transform: uppercase;
 }
 
+table {
+  background-color: transparent;
+  border-width: 0 !important;
+  border-spacing: 0;
+  width: 100%;
+  margin: 1.5em 0 !important;
+  font-size: .925em;
+}
+
+th {
+  background-color: #d8d8d8;
+  color: #000;
+  padding: 13px 22px !important;
+  vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+  line-height: 2.14;
+  font-size: 1.125em;
+}
+
+td {  
+  border-top: 1px solid #c0c0c0;
+  background-color: transparent;
+  vertical-align: top;
+  padding: 13px 22px !important;
+}
 /*#endregion Global */
 
 /*#region Headerlink */
