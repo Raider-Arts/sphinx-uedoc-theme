@@ -1,8 +1,8 @@
-=============================
- Foundation Sphinx Theme Demo
-=============================
+=====================================
+ Unreal Engine Doc Sphinx Theme Demo
+=====================================
 
-This is a simple demo of the `Foundation Sphinx theme <http://github.com/peterhudec/foundation-sphinx-theme>`_.
+This is a simple demo of the `UEDOC Sphinx theme <https://github.com/Raider-Arts/sphinx-uedoc-theme>`_.
 
 This is a ``literal``, this is a link to :func:`foo` function and this to :class:`Bar` class.
 
@@ -14,6 +14,7 @@ Contents
    self
    very/index
    reference
+   extensions
 
 
 Headings
@@ -107,7 +108,6 @@ This is compound:
       Eam ad sint accumsan percipitur, dicta ubique expetendis ne sed.
       Cu ipsum percipit electram sed. Per recusabo convenire definiebas an.
       Cu atomorum splendide nec, id qui suas urbanitas.
-
 
 Admonitions
 ===========
@@ -224,4 +224,6 @@ Lorem ipsum [Ref1]_ dolor sit amet [Ref2]_, mea quot omnes appellantur ne [Ref3]
 .. [Ref2] Book or article reference, URL or whatever.
 
 .. [Ref3] Book or article reference, URL or whatever.
+
+
 
