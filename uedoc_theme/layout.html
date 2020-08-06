@@ -26,6 +26,24 @@
     </div>
 {%- endmacro %}
 
+{% macro uedoc_footer() %}
+<div class="footer" role="contentinfo">
+	{%- if show_copyright %}
+		{%- if hasdoc('copyright') %}
+		{% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+		{%- else %}
+		{% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+		{%- endif %}
+	{%- endif %}
+	{%- if last_updated %}
+		{% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}
+	{%- endif %}
+	{%- if show_sphinx %}
+		{% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
+	{%- endif %}
+</div>
+{% endmacro %}
+
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}
 
 {% block header %}
@@ -48,6 +66,9 @@
 			{% block body %} {% endblock %}
 			<div class="clearer"></div>
 			</div>
+			{% block uedoc_footer %}
+				{{uedoc_footer()}}
+			{% endblock uedoc_footer %}
 		{%- if render_sidebar %}
 		</div>
 		{%- endif %}
@@ -64,3 +85,5 @@
 {%- block sidebar2 %}
 	{# override sidebar2 location when dont want the sidebar here #}
 {% endblock %}
+
+{%- block footer %} {# override footer location when dont want the footer here #} {% endblock footer %}
