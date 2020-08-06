@@ -358,6 +358,10 @@ ol ol ol,ol ul ol,ul ul ol,ul ol ol{
   list-style:lower-roman
 }
 
+ol li {
+  padding: .375em 0;
+}
+
 /*#endregion Global */
 
 /*#region Headerlink */
