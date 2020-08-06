@@ -329,6 +329,7 @@ td {
   background-color: transparent;
   vertical-align: top;
   padding: 13px 22px !important;
+  height: 47px;
 }
 
 
