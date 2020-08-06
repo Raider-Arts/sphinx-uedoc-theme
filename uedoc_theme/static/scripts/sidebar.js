@@ -154,13 +154,35 @@ $(window).on('load', function () {
 	$('#sidebar li a span.button').on('click', sidebar_item_click)
 })
 
+/** Highlight a link in the sidebar list of topics (TOC)*/
 $(window).on('load', function () {
 	var currpage = $('div.related li.nav-item-this').children().text()
 	$('#sidebar li').each(function () {
-		if ($(this).children('a').text().trim() === currpage.trim()) {
+		var hash = (window.location.hash).trim()
+		var elemHash = $(this).children('a').attr('href')
+		var elemTxt = $(this).children('a').text().trim()
+		var selected = false
+		if (hash != "") {
+			if (hash === elemHash) {
+				selected = true
+			}
+		} else if (elemTxt === currpage.trim()) {
+			selected = true
+		}
+			
+		if (selected) {
 			$(this).addClass('selected-link')
 		} else {
 			$(this).removeClass('selected-link')
 		}
+	})
+})
+
+/** If we're not changing (reloading) the page just select the link we just clicked */
+$(window).on('load', function () {
+	$('#sidebar a.reference').on('click', function () {
+		$('#sidebar li').removeClass('selected-link')
+		$(this).parent().addClass('selected-link')
+		return true
 	})
 })
