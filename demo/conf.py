@@ -56,5 +56,11 @@ html_theme_path = ['../']
 
 #option for theme
 html_theme_options = {
-    'quicklinks' : [{'name': 'Unreal Website', 'link': 'https://www.unrealengine.com/en-US/'}]
+    'quicklinks' : [{'name': 'Unreal Website', 'link': 'https://www.unrealengine.com/en-US/'}],
+    'socials': {'twitter': "https://twitter.com/",
+                'facebook': 'https://facebook.com/',
+                'twitch': 'http://www.twitch.tv/',
+                'instagram': 'http://instagram.com/',
+                'youtube': 'http://www.youtube.com/',
+                'rss': 'http://rss'}
 }

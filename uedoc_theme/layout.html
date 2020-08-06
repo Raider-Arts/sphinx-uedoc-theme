@@ -28,6 +28,13 @@
 
 {% macro uedoc_footer() %}
 <div class="footer" role="contentinfo">
+	{% block social_icons %}
+	<div class="social-links">
+		{% for social,link in theme_socials.items() %}
+			<div><a href="{{link}}"><i class='fa fa-{{social}}'></i></a></div>
+		{% endfor %}
+	</div>
+	{% endblock social_icons %}
 	{%- if show_copyright %}
 		{%- if hasdoc('copyright') %}
 		{% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}

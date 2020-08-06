@@ -950,6 +950,7 @@ ul span#page {
 /*#endregion Related */
 
 /*#region Footer */
+
 div.footer {
   font-size: 16px;
   font-family: OpenSans,sans-serif;
@@ -969,6 +970,32 @@ div.footer {
 div.footer, div.footer a{
   color: #e7e7e7;
 }
+
+div.social-links {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+}
+
+div.social-links > * {
+  padding: 0 .3em;
+  margin: 0 0 .5em;
+}
+
+div.social-links a{
+  font-size: 1.75em;
+}
+
+div.footer a{
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+div.footer a:hover{
+  color: #0aaff1;
+}
+
 /*#endregion Footer */
 
 /* DEUBUG LAYOUT */
