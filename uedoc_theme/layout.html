@@ -21,8 +21,14 @@
           <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a><span class="separator">{{ reldelim1 }}</span></li>
         {%- endfor %}
         <li class="nav-item nav-item-this"><span id="page">{{ title }}</span></a></li>
-        {%- block relbaritems %} {% endblock %}
-      </ul>
+		{%- block relbaritems %} {% endblock %}
+	  </ul>
+	  <div id="search_container">
+		<form method="get" action="{{ pathto('search') }}">
+			<input type="image" src="./_static/images/search_box_icon.png" class="searchbutton">
+			<input type="text" placeholder="Search Documentation..." class="searchbox" name="q" aria-labelledby="searchlabel" autocomplete="off">
+	  </form>
+		</div>
     </div>
 {%- endmacro %}
 

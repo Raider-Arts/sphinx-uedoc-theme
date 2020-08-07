@@ -973,6 +973,49 @@ ul span#page {
   opacity: .75;
   padding-right: 42px;
 }
+
+div#search_container {
+  margin: 20px;
+  margin-right: 8em;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+  z-index: 100;
+  top: 0;
+  position: relative;
+  height: 46px;
+  width: 465px;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1280px){
+  div#search_container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+div#search_container .searchbutton {
+  width: 17px;
+  height: 17px;
+  padding: 10px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  opacity: .25;
+}
+
+div#search_container .searchbox {
+  color: #000;
+  opacity: .75;
+  margin: 0;
+  padding: 13px 42px 13px 17px;
+  width: 404px;
+  font-family: Brutal_Regular,Verdana,Arial,sans serif;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+}
 /*#endregion Related */
 
 /*#region Footer */
