@@ -8,3 +8,10 @@ function isMobile() {
 $(window).on('load', function () {
 	$('table.highlighttable').addClass('highlight')
 })
+
+$(window).on('load', function () {
+	$('div.footer button.sendto_top').on('click', function () {
+		console.log("CLICKED MUDDA")
+		$('html,body').animate({scrollTop: '0px'}, 300);
+	})
+})

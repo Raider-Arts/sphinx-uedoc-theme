@@ -35,7 +35,11 @@
 		{% endfor %}
 	</div>
 	{% endblock social_icons %}
-
+	{% if theme_show_totop_button %}
+	<button class="sendto_top">
+		<span class="fas fa-chevron-up"></span>
+	</button>
+	{% endif %}
 	{% block footer_links %}
 		<ul class="footer_links">
 			{% for footerlink in theme_footerlinks %}

@@ -1012,14 +1012,28 @@ div.social-links a{
   font-size: 1.75em;
 }
 
-div.footer a{
+div.footer a,
+div.footer button,
+div.footer button span{
   -webkit-transition: color .3s ease-in-out;
   -o-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
 }
 
-div.footer a:hover{
+div.footer button{
+  -webkit-transition: border-color .3s ease-in-out;
+  -o-transition: border-color .3s ease-in-out;
+  transition: border-color .3s ease-in-out;
+}
+
+div.footer a:hover, 
+div.footer button:hover,
+div.footer button span:hover{
   color: #0aaff1
+}
+
+div.footer button:hover{
+  border-color: #0aaff1
 }
 
 div.footer {
@@ -1048,6 +1062,27 @@ span.footer_copyright {
   font-family: OpenSans,sans-serif;
   font-weight: 400;
   line-height: 2em;
+}
+
+button.sendto_top {
+  color: #ccc;
+  cursor: pointer;
+  float: right;
+  width: 2.1em;
+  height: 2.1em;
+  border: 2px solid #fff;
+  padding: .25em;
+  border-radius: 2px;
+  margin: 1.25em 1em 0 0;
+  font-size: 1.2em;
+  -webkit-transition: border .3s ease-in-out;
+  -o-transition: border .3s ease-in-out;
+  transition: border .3s ease-in-out;
+  background-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /*#endregion Footer */
