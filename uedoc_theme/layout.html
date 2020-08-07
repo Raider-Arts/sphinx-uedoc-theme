@@ -35,11 +35,20 @@
 		{% endfor %}
 	</div>
 	{% endblock social_icons %}
+
+	{% block footer_links %}
+		<ul class="footer_links">
+			{% for footerlink in theme_footerlinks %}
+				<li><a href="{{footerlink['link']}}">{{footerlink['name']}}</a></li>
+			{% endfor %}
+		</ul>
+	{% endblock footer_links %}
+	<span class="footer_copyright">
 	{%- if show_copyright %}
 		{%- if hasdoc('copyright') %}
-		{% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+			{% trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
 		{%- else %}
-		{% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+			{% trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
 		{%- endif %}
 	{%- endif %}
 	{%- if last_updated %}
@@ -48,6 +57,7 @@
 	{%- if show_sphinx %}
 		{% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}
 	{%- endif %}
+	</span>
 </div>
 {% endmacro %}
 
@@ -93,4 +103,6 @@
 	{# override sidebar2 location when dont want the sidebar here #}
 {% endblock %}
 
-{%- block footer %} {# override footer location when dont want the footer here #} {% endblock footer %}
+{%- block footer %} 
+	{# override footer location when dont want the footer here #} 
+{% endblock footer %}

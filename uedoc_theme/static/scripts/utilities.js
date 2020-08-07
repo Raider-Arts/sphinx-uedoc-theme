@@ -4,3 +4,7 @@
 function isMobile() {      
 	return window.matchMedia("only screen and (max-width: 1280px)").matches;
 }
+
+$(window).on('load', function () {
+	$('table.highlighttable').addClass('highlight')
+})
