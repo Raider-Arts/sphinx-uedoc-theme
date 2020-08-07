@@ -214,6 +214,27 @@ Highlighting respects the pygments theme, except for background.
     
     d = {'a': 1, 'b': 2}
 
+Code block with line numbers
+
+.. highlight:: python
+   :linenothreshold: 1
+
+::
+
+    from foo import bar
+    
+    # Comment
+    
+    class Foo(bar.Bar):
+      """
+      Foo bar baz.
+      """
+      
+      def bar(arg_1=1, arg_2=2):
+         print arg_1 + arg_2
+    
+    d = {'a': 1, 'b': 2}
+
 Footnotes
 =========
 
