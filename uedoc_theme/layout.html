@@ -80,15 +80,15 @@
 {% block document %}
 	<div class="documentwrapper">
 		{% block uedoc_sidebar %}
-			{%- if render_sidebar %}
+			{%- if render_sidebar and not is_search %}
 				<div id="sidebar">
 					{{sidebar()}}
 				</div>
 			{%- endif %}
 		{% endblock uedoc_sidebar %}
-		{%- if render_sidebar %}
-		<div class="bodywrapper" id="document">
-		{%- endif %}
+		<div class="bodywrapper 
+			{{ 'full-width' if (not render_sidebar) or is_search }} 
+			{{ 'search_page' if is_search}}" id="document">
 			<div class="body" role="main">
 			{% block body %} {% endblock %}
 			<div class="clearer"></div>
@@ -96,9 +96,7 @@
 			{% block uedoc_footer %}
 				{{uedoc_footer()}}
 			{% endblock uedoc_footer %}
-		{%- if render_sidebar %}
 		</div>
-		{%- endif %}
 		{% block uedoc_localtoc %}
 			{% include 'localtoc.html' %}
 		{% endblock uedoc_localtoc %}
