@@ -1141,8 +1141,65 @@ button.sendto_top {
 
 /*#region Search_page */
 
+div.search_page h1 {
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.1;
+  font-family: Brutal_Regular, "Open Sans", arial;
+  margin: .67em 0;
+  margin-top: 22px;
+  margin-bottom: 11px;
+}
+
+div.search_page form {
+  background-color: rgb(10, 175, 241);
+  height: 45px;
+  padding-left: 2px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0px;
+}
+
+div.search_page form input[type=text] {
+  display: block;
+  width: calc(100% - 108px);
+  height: 41px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  padding: 0px 0px 0px 1em;
+  margin: 2px 0px;
+  outline: none;
+}
+
+div.search_page form input[type=submit] {
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  right: 0px;
+  top: 0px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  font-size: 1.1em;
+  padding: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  transition: background 0.2s ease-in-out 0s;
+  outline: none;
+  background: transparent;
+  font-family: OpenSans,sans-serif;
+  font-size: 1.7em;
+  cursor: pointer;
+}
+
 div.search_page div.body {
   width: unset;
+  padding: 1.25em 0px;
 }
 
 div.search_page {
@@ -1157,6 +1214,23 @@ div.search_page div.body {
   padding-left: 15px;
 }
 
+
+div.search_page li::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f07c";
+  position: absolute;
+  left: 0;
+}
+
+div.search_page li {
+  position: relative;
+  background-image: none;
+}
+
+div.search_page li a:hover{
+  color: #0aaff1
+}
 
 @media only screen and (min-width: 768px) {
   div.search_page div.body {
