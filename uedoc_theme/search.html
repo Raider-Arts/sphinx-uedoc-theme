@@ -1,0 +1,15 @@
+{% extends 'basic/search.html' %}
+
+{% set is_search = true %}
+
+{% block relbar1 %}
+	{# We dont want the relbar in the search page #}
+{% endblock relbar1 %}
+
+{% block uedoc_footer %}
+	{# We dont want the relbar in the search page #}
+{% endblock uedoc_footer %}
+
+{% block footer %}
+	{{uedoc_footer()}}
+{% endblock footer %}
