@@ -468,6 +468,11 @@ div.code-block-caption:hover > a.headerlink {
   margin: 0 40px 0 20px;
 }
 
+.uedoc-title a {
+  text-decoration: none;
+  color: unset;
+}
+
 .uedoc-logo {
   width: 3.7em;
   height: 3.7em;
@@ -1214,9 +1219,8 @@ div.search_page div.body {
   padding-left: 15px;
 }
 
-
 div.search_page li::before {
-  font-family: "Font Awesome 5 Free"; 
+  font-family: "Font Awesome 5 Free";
   font-weight: 900; 
   content: "\f07c";
   position: absolute;
