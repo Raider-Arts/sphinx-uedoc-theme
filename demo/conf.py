@@ -65,10 +65,11 @@ html_theme_options = {
                 'rss':          'http://rss'},
     'footerlinks': [{'name': 'Unreal Website',       'link': 'https://www.unrealengine.com/en-US/'},
                     {'name': 'Personal Portfolio',   'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'other link',           'link':'http://darkimage.raiderarts.net/'},
+                    {'name': 'other link',           'link': 'http://darkimage.raiderarts.net/'},
                     {'name': 'other link1',          'link': 'http://darkimage.raiderarts.net/'},
                     {'name': 'other link3',          'link': 'http://darkimage.raiderarts.net/'},
                     {'name': 'other link4',          'link': 'http://darkimage.raiderarts.net/'},
                     {'name': 'a lot of link',        'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'last link',            'link': 'http://darkimage.raiderarts.net/'}]
+                    {'name': 'last link',            'link': 'http://darkimage.raiderarts.net/'}],
+    "header_button": {'name': 'Download', 'link': 'https://www.unrealengine.com/en-US/'}
 }
