@@ -1,0 +1,35 @@
+---
+name: "Pypi deploy"
+
+on: push 
+
+jobs:
+  pre-release:
+    name: "Pypi deploy"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v2
+      - name: "Set release name"
+        run: |
+          export RELEASE_NAME="${{ github.event.repository.name }}-dev"
+          echo "::set-env name=NAME::$RELEASE_NAME"
+        
+      - name: "Install Requirements"
+        if: success()
+        run: |
+            python -m pip install -r requirements.txt
+            python -m pip install wheel
+
+      - name: "Build Package"
+        if: success()
+        run: |
+            cd $GITHUB_WORKSPACE
+            python setup.py sdist bdist_wheel
+
+      - name: Publish distribution 📦 to Test PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_TEST_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
