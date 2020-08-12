@@ -12,10 +12,10 @@ jobs:
       - uses: actions/setup-python@v2
       - uses: actions/checkout@v2
       - name: Test Secrets
-      env:
-        TEST_GITHUB_TOKEN: ${{ secrets.PYPI_TEST_TOKEN }}
-      run: |
-        echo ${#TEST_GITHUB_TOKEN}
+        env:
+          TEST_GITHUB_TOKEN: ${{ secrets.PYPI_TEST_TOKEN }}
+        run: |
+          echo ${#TEST_GITHUB_TOKEN}
       - name: "Set release name"
         run: |
           export RELEASE_NAME="${{ github.event.repository.name }}-dev"
