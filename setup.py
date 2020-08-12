@@ -1,6 +1,7 @@
 import setuptools
 import time
 import math
+import setuptools_scm
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -22,7 +23,7 @@ setuptools.setup(
     url="https://github.com/Raider-Arts/sphinx-uedoc-theme",
     packages=setuptools.find_packages(),
     use_scm_version={"root": ".", "relative_to": __file__,
-                        "local_scheme": local_version},
+                        "local_scheme": "no-local-version"},
     setup_requires=['setuptools_scm'],
     classifiers=[
         "Programming Language :: Python :: 3",
