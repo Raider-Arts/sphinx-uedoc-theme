@@ -52,7 +52,7 @@ html_theme = 'uedoc_theme'
 html_static_path = ['_static']
 
 # Path to themes
-html_theme_path = ['../']
+#html_theme_path = ['../']
 
 #option for theme
 html_theme_options = {
