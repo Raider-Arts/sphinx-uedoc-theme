@@ -1,7 +1,7 @@
 ---
 name: "Pypi deploy"
 
-on: push
+on: push 
 
 jobs:
   pre-release:
