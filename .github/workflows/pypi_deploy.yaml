@@ -19,12 +19,12 @@ jobs:
       - name: "Install Requirements"
         if: success()
         run: |
-            python pip install requirements.txt
+            python -m pip install requirements.txt
 
       - name: "Build Package"
         if: success()
         run: |
-            python3 setup.py sdist bdist_wheel
+            python setup.py sdist bdist_wheel
       
       - name: "Deploying to Pypi"
         uses: pypa/gh-action-pypi-publish@master
