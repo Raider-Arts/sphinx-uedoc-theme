@@ -23,7 +23,7 @@ setuptools.setup(
     url="https://github.com/Raider-Arts/sphinx-uedoc-theme",
     packages=setuptools.find_packages(),
     use_scm_version={"root": ".", "relative_to": __file__,
-                        "local_scheme": "no-local-version"},
+                        "local_scheme": local_version},
     setup_requires=['setuptools_scm'],
     classifiers=[
         "Programming Language :: Python :: 3",
