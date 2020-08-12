@@ -3,6 +3,12 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+def local_version(version):
+    """
+    Patch in a version that can be uploaded to test PyPI
+    """
+    return ""
+
 setuptools.setup(
     name="sphinx-uedoc-theme", # Replace with your own username
     version="0.1.0",
@@ -13,7 +19,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Raider-Arts/sphinx-uedoc-theme",
     packages=setuptools.find_packages(),
-    use_scm_version=True,
+    use_scm_version={"root": ".", "relative_to": __file__,
+                        "local_scheme": local_version},
     setup_requires=['setuptools_scm'],
     classifiers=[
         "Programming Language :: Python :: 3",
