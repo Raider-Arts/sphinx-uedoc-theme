@@ -6,11 +6,16 @@ on: push
 jobs:
   pre-release:
     name: "Pypi deploy"
-    runs-on: "ubuntu-latest" 
+    runs-on: "ubuntu-latest"
 
     steps:
       - uses: actions/setup-python@v2
       - uses: actions/checkout@v2
+      - name: Test Secrets
+      env:
+        TEST_GITHUB_TOKEN: ${{ secrets.PYPI_TEST_TOKEN }}
+      run: |
+        echo ${#TEST_GITHUB_TOKEN}
       - name: "Set release name"
         run: |
           export RELEASE_NAME="${{ github.event.repository.name }}-dev"
@@ -30,5 +35,5 @@ jobs:
       - name: Publish distribution 📦 to Test PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
-          password: pypi-AgENdGVzdC5weXBpLm9yZwIkMzYzMjY4YTItMWU0Ny00NTA5LWJhM2UtYTU4MDgwN2I5ZTkxAAIleyJwZXJtaXNzaW9ucyI6ICJ1c2VyIiwgInZlcnNpb24iOiAxfQAABiCSzyVFCmWtt0kHWQ2l960uykC5FqVX9lj-Did0PDu27w
+          password: ${{ secrets.PYPI_TEST_TOKEN }}
           repository_url: https://test.pypi.org/legacy/

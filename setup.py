@@ -1,4 +1,6 @@
 import setuptools
+import time
+import math
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -7,7 +9,7 @@ def local_version(version):
     """
     Patch in a version that can be uploaded to test PyPI
     """
-    return ""
+    return str(math.floor(time.time()))
 
 setuptools.setup(
     name="sphinx-uedoc-theme", # Replace with your own username
