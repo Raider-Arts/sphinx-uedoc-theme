@@ -7,6 +7,22 @@
   Stops the page with the F12 key  
 **/
 
+:root{
+  --clr-background: #ffffff;
+  
+  --clr-primary: #2a2a2a;
+  --clr-primary-light: #525252;
+  --clr-primary-dark: #000000;
+
+  --clr-secondary: #0aaff1;
+  --clr-secondary-light: #68e1ff;
+  --clr-secondary-dark: #0080be;
+
+  --clr-text-primary: #ffffff;
+  --clr-text-secondary: #000000;
+}
+
+
 /*#region Global */
 
 body {
