@@ -8,31 +8,71 @@
 **/
 
 :root{
-  --clr-background: #ffffff;
+  --clr-background-h: 0;
+  --clr-background-s: 0%;
+  --clr-background-l: 100%;
+
+  --clr-primary-h: 0
+  --clr-primary-s: 0%;
+  --clr-primary-l: 16%;
+
+  --clr-secondary-h: 197;
+  --clr-secondary-s: 92%;
+  --clr-secondary-l: 49%;
+
+  --clr-text-primary-h: 0;
+  --clr-text-primary-s: 0%;
+  --clr-text-primary-l: 100%;
+
+  --clr-text-secondary-h: 0;
+  --clr-text-secondary-s: 0%;
+  --clr-text-secondary-l: 0%;
+
+  --clr-text-background-h: 0;
+  --clr-text-background-s: 0%;
+  --clr-text-background-l: 0%;
+
+  --clr-background: hsl(var(--clr-background-h),var(--clr-background-s),var(--clr-background-l));
+  --clr-background-light: hsl(var(--clr-background-h),var(--clr-background-s),calc(var(--clr-background-l) - 6%));
+  --clr-background-dark: #ffffff;
   
-  --clr-primary: #2a2a2a;
-  --clr-primary-light: #525252;
-  --clr-primary-dark: #000000;
+  --clr-primary: hsl(var(--clr-primary-h),var(--clr-primary-s),var(--clr-primary-l));
+  --clr-primary-light: hsl(var(--clr-primary-h),var(--clr-primary-s),calc(var(--clr-primary-l)) + 16%);
+  --clr-primary-dark: hsl(var(--clr-primary-h),var(--clr-primary-s),calc(var(--clr-primary-l)) - 16%);
 
-  --clr-secondary: #0aaff1;
-  --clr-secondary-light: #68e1ff;
-  --clr-secondary-dark: #0080be;
+  --clr-secondary: hsl(var(--clr-secondary-h),var(--clr-secondary-s),var(--clr-secondary-l));
+  --clr-secondary-light: hsl(calc(var(--clr-secondary-h) - 5),calc(var(--clr-secondary-s) + 8%), calc(var(--clr-secondary-l) + 21%));
+  --clr-secondary-dark: hsl(calc(var(--clr-secondary-h) + 3),calc(var(--clr-secondary-s) + 8%), calc(var(--clr-secondary-l) - 12%));
 
-  --clr-text-primary: #ffffff;
-  --clr-text-secondary: #000000;
+  --clr-text-background-lighter: #ffffff;
+  --clr-text-background-light: #ffffff;
+  --clr-text-background: hsl(var(--clr-text-background-h),var(--clr-text-background-s),var(--clr-text-background-l));
+  --clr-text-primary-dark: #e7e7e7;
+  --clr-text-primary-darker: #303030;
+
+  --clr-text-background-lighter: #5c5c5c;
+  --clr-text-background-light: #303030;
+  --clr-text-secondary: hsl(var(--clr-text-secondary-h),var(--clr-text-secondary-s),var(--clr-text-secondary-l));
+  --clr-text-primary-dark: #000000;
+  --clr-text-primary-darker: #000000;
+
+  --clr-text-background-lighter: #5c5c5c;
+  --clr-text-background-light: #303030;
+  --clr-text-background: hsl(var(--clr-text-background-h),var(--clr-text-background-s),var(--clr-text-background-l));
+  --clr-text-background-dark: #000000;
+  --clr-text-background-darker: #000000;
 }
 
 
 /*#region Global */
 
 body {
-  background-color: #ffffff;
+  background-color: var(--clr-background);
   margin: 0;
   font-size: 13px;
   font-family: OpenSans_Regular, Verdana, Arial, sans serif;
-  color: #000;
+  color: var(--clr-text-background);
   line-height: 1.75em;
-  margin: 0;
   padding: 0;
 }
 

@@ -1,6 +1,7 @@
 {% extends "basic/layout.html" %}
 
 {# Setting up scripts #}
+{% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"] %}
 {% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"] %}
 {% set script_files = script_files + ["_static/scripts/utilities.js"] %}
 {% set script_files = script_files + ["_static/scripts/splitter.js"] %}
@@ -70,6 +71,10 @@
 	</span>
 </div>
 {% endmacro %}
+
+{% block extrahead %}
+<style>{{":root{"+theme_color_scheme+"}"}}</style>
+{% endblock extrahead %}
 
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}
 
