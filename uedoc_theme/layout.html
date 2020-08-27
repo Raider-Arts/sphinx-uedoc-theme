@@ -8,6 +8,7 @@
 {% set script_files = script_files + ["_static/scripts/filter-pages.js"] %}
 {% set script_files = script_files + ["_static/scripts/sidebar.js"] %}
 {% set script_files = script_files + ["_static/scripts/localtoc.js"] %}
+{% set script_files = script_files + ["_static/scripts/theme.js"] %}
 {% set script_files = script_files + ["https://kit.fontawesome.com/dff6b54517.js"] %}
 {% set reldelim1 = ">" %}
 
@@ -73,7 +74,7 @@
 {% endmacro %}
 
 {% block extrahead %}
-<style>{{":root{"+theme_color_scheme+"}"}}</style>
+<style id="uedoc_theme">{{ theme_color_scheme }}</style>
 {% endblock extrahead %}
 
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}

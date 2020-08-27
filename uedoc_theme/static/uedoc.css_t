@@ -1,36 +1,30 @@
 @import 'basic.css';
 @import 'fonts.css';
 
-
-/** 
-  Debug Macro: jQuery(window).keydown(function(e) { if (e.keyCode == 123) debugger; });
-  Stops the page with the F12 key  
-**/
-
 :root{
   --clr-background-h: 0;
   --clr-background-s: 0%;
-  /* --clr-background-l: 100%; */
+  --clr-background-l: 100%;
 
   --clr-primary-h: 0;
   --clr-primary-s: 0%;
-  /* --clr-primary-l: 16%; */
+  --clr-primary-l: 16%;
 
   --clr-secondary-h: 197;
   --clr-secondary-s: 92%;
-  /* --clr-secondary-l: 49%; */
+  --clr-secondary-l: 49%;
 
   --clr-text-primary-h: 0;
   --clr-text-primary-s: 0%;
-  /* --clr-text-primary-l: 100%; */
+  --clr-text-primary-l: 100%;
 
   --clr-text-secondary-h: 0;
   --clr-text-secondary-s: 0%;
-  /* --clr-text-secondary-l: 0%; */
+  --clr-text-secondary-l: 0%;
 
   --clr-text-background-h: 0;
   --clr-text-background-s: 0%;
-  /* --clr-text-background-l: 0%; */
+  --clr-text-background-l: 0%;
   
   --clr-primary-hs: var(--clr-primary-h),var(--clr-primary-s);
   --clr-background-hs: var(--clr-background-h),var(--clr-background-s);
@@ -39,12 +33,12 @@
   --clr-text-secondary-hs: var(--clr-text-secondary-h),var(--clr-text-secondary-s);
   --clr-text-background-hs: var(--clr-text-background-h),var(--clr-text-background-s);
 
-  --clr-background-hsl: var(--clr-background-hs), 100%;
-  --clr-primary-hsl: var(--clr-primary-hs), 16%;
-  --clr-secondary-hsl: var(--clr-secondary-hs), 49%;
-  --clr-text-primary-hsl: var(--clr-text-primary-hs), 100%;
-  --clr-text-secondary-hsl: var(--clr-text-secondary-hs), 100%;
-  --clr-text-background-hsl: var(--clr-text-background-hs), 0%;
+  --clr-background-hsl: var(--clr-background-hs), var(--clr-background-l);
+  --clr-primary-hsl: var(--clr-primary-hs), var(--clr-primary-l);
+  --clr-secondary-hsl: var(--clr-secondary-hs), var(--clr-secondary-l);
+  --clr-text-primary-hsl: var(--clr-text-primary-hs), var(--clr-text-primary-l);
+  --clr-text-secondary-hsl: var(--clr-text-secondary-hs), var(--clr-text-secondary-l);
+  --clr-text-background-hsl: var(--clr-text-background-hs), var(--clr-text-background-l);
   
 
   --clr-background: hsl(var(--clr-background-hsl));
@@ -1004,13 +998,13 @@ div.localtocwrapper {
   position: sticky;
   top: 20px;
   width: 312px;
-  background: #fff;
   border: 1px solid #e0e0e0;
   font-family: Brutal_Regular,Verdana,Arial,sans serif;
   display: block;
   margin: 20px 36px 20px 0;
   overflow: hidden auto;
   text-overflow: ellipsis;
+  background-color: var(--clr-background);
 }
 
 /*#endregion localtoc */
