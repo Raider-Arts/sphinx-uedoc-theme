@@ -20,7 +20,7 @@
 
   --clr-text-secondary-h: 0;
   --clr-text-secondary-s: 0%;
-  --clr-text-secondary-l: 0%;
+  --clr-text-secondary-l: 100%;
 
   --clr-text-background-h: 0;
   --clr-text-background-s: 0%;
