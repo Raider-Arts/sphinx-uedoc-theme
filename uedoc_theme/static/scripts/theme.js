@@ -1,5 +1,7 @@
 
 var uedoc_theme = {
+	styleElement: '#uedoc_theme',
+
 	getSafeValue: (nmb) => {
 		return (isNaN(nmb)) ? 0 : nmb;
 	},
@@ -34,17 +36,32 @@ var uedoc_theme = {
 		$(':root').css(`${key}-l`, color[2]);
 	},
 
-	generateTheme: (css) => {
-		var cssObj = JSON.parse(css);
-		for (const color in cssObj) {
-			if (cssObj.hasOwnProperty(color)) {
-				const theme_color = cssObj[color];
+	generateTheme: () => {
+		var css = $(uedoc_theme.styleElement).html();
+		var theme = localStorage.getItem("theme");
+
+		if (!theme) {
+			theme = 'default';
+			localStorage.setItem('theme', theme);
+		}
+
+		var themeCss = JSON.parse(css)[theme];
+		for (const color in themeCss) {
+			if (themeCss.hasOwnProperty(color)) {
+				const theme_color = themeCss[color];
 				uedoc_theme.setThemeColor(`--clr-${color}`, theme_color);
 			}
 		}
+	},
+
+	registerTheme: (theme, css) => {
+		localStorage.setItem('theme', theme);
+		var themecss = JSON.parse($(uedoc_theme.styleElement).html());
+		themecss[theme] = css;
+		$(uedoc_theme.styleElement).html(JSON.stringify(themecss, null, 2));
 	}
 };
 
 $(window).on('load', function () {
-	uedoc_theme.generateTheme($('#uedoc_theme').html());
+	uedoc_theme.generateTheme();
 })

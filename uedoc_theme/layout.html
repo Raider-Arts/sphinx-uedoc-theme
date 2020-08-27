@@ -74,7 +74,21 @@
 {% endmacro %}
 
 {% block extrahead %}
-<style id="uedoc_theme">{{ theme_color_scheme }}</style>
+<style id="uedoc_theme">
+	{% if theme_color_scheme %}
+	{ 
+		"default": {{ theme_color_scheme }}
+	}
+	{%- else %}
+	{
+		"default": {
+			"background": "#fff", 
+			"primary": "hsl(0,0%, 16%)", 
+			"secondary": "#0aaff0"
+		}
+	}
+	{% endif %}
+</style>
 {% endblock extrahead %}
 
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}

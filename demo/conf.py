@@ -54,6 +54,9 @@ html_static_path = ['_static']
 # Path to themes
 html_theme_path = ['../']
 
+# override the pygments of the theme
+# pygments_style = 'abap'
+
 #option for theme
 html_theme_options = {
     'quicklinks' : [{'name': 'Unreal Website', 'link': 'https://www.unrealengine.com/en-US/'}],
@@ -64,12 +67,12 @@ html_theme_options = {
                 'youtube':      'http://www.youtube.com/',
                 'rss':          'http://rss'},
     'footerlinks': [{'name': 'Unreal Website',       'link': 'https://www.unrealengine.com/en-US/'},
-                    {'name': 'Personal Portfolio',   'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'other link',           'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'other link1',          'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'other link3',          'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'other link4',          'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'a lot of link',        'link': 'http://darkimage.raiderarts.net/'},
-                    {'name': 'last link',            'link': 'http://darkimage.raiderarts.net/'}],
+                    {'name': 'Personal Portfolio',   'link': 'https://github.com/darkimage'},
+                    {'name': 'other link',           'link': 'https://github.com/darkimage'},
+                    {'name': 'other link1',          'link': 'https://github.com/darkimage'},
+                    {'name': 'other link3',          'link': 'https://github.com/darkimage'},
+                    {'name': 'other link4',          'link': 'https://github.com/darkimage'},
+                    {'name': 'a lot of link',        'link': 'https://github.com/darkimage'},
+                    {'name': 'last link',            'link': 'https://github.com/darkimage'}],
     "header_button": {'name': 'Download', 'link': 'https://www.unrealengine.com/en-US/'}
 }
