@@ -15,6 +15,7 @@ Contents
    very/index
    reference
    extensions
+   cheatsheet
 
 
 Headings

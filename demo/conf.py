@@ -57,6 +57,8 @@ html_theme_path = ['../']
 # override the pygments of the theme
 # pygments_style = 'abap'
 
+numfig = True
+
 #option for theme
 html_theme_options = {
     'quicklinks' : [{'name': 'Unreal Website', 'link': 'https://www.unrealengine.com/en-US/'}],
