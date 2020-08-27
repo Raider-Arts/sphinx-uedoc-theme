@@ -190,6 +190,10 @@ div.body{
   width: calc(100% - 440px);
 }
 
+.bodywrapper {
+  width: 100%;
+}
+
 @media only screen and (max-width: 1280px) {
 
   .bodywrapper div.body div.section:first-of-type h1 {
