@@ -29,10 +29,18 @@ var docTheme = {
 	},
 
 	setThemeColor: (key, clr) => {
-		var color = docTheme.getColor(chroma(clr).hsl(), 'hsl');
-		$(':root').css(`${key}-h`, color[0]);
-		$(':root').css(`${key}-s`, color[1]);
-		$(':root').css(`${key}-l`, color[2]);
+		if (key != 'override') {
+			var color = docTheme.getColor(chroma(clr).hsl(), 'hsl');
+			$(':root').css(`--clr-${key}-h`, color[0]);
+			$(':root').css(`--clr-${key}-s`, color[1]);
+			$(':root').css(`--clr-${key}-l`, color[2]);
+		}else{
+			for (const overrideKey in clr) {
+				if (clr.hasOwnProperty(overrideKey)) {
+					$(':root').css(overrideKey, clr[overrideKey])
+				}
+			}
+		}
 	},
 
 	generateTheme: (css) => {
@@ -47,8 +55,7 @@ var docTheme = {
 		var themeCss = JSON.parse(css)[theme];
 		for (const color in themeCss) {
 			if (themeCss.hasOwnProperty(color)) {
-				const theme_color = themeCss[color];
-				docTheme.setThemeColor(`--clr-${color}`, theme_color);
+				docTheme.setThemeColor(color, themeCss[color]);
 			}
 		}
 	},
