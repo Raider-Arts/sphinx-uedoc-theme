@@ -2,6 +2,8 @@
 @import 'fonts.css';
 
 :root{
+
+  /* This variables can be automatically set from the theme, see Theming docs*/
   --clr-background-h: 0;
   --clr-background-s: 0%;
   --clr-background-l: 100%;
@@ -26,6 +28,10 @@
   --clr-text-background-s: 0%;
   --clr-text-background-l: 0%;
   
+  /* 
+    Automatically generated values, please do not override from theme,
+    If you still want to override them be sure to respect the original format
+  */
   --clr-primary-hs: var(--clr-primary-h),var(--clr-primary-s);
   --clr-background-hs: var(--clr-background-h),var(--clr-background-s);
   --clr-secondary-hs: var(--clr-secondary-h),var(--clr-secondary-s);
@@ -40,7 +46,7 @@
   --clr-text-secondary-hsl: var(--clr-text-secondary-hs), var(--clr-text-secondary-l);
   --clr-text-background-hsl: var(--clr-text-background-hs), var(--clr-text-background-l);
   
-
+  /* This variables can be set/overwritten from the theme */
   --clr-background: hsl(var(--clr-background-hsl));
   --clr-primary: hsl(var(--clr-primary-hsl));
   --clr-secondary: hsl(var(--clr-secondary-hsl));
