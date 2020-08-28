@@ -73,15 +73,33 @@ div.documentwrapper {
   flex-direction: row;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.toctree-wrapper p.caption {
   font-size: 1.5em;
   overflow: hidden;
   font-family: Brutal_Regular, Verdana, Arial, sans serif;
-  /* height: 100%; */
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
+h2 {
+  font-size: 1.35em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4,h5,h6 {
+  font-size: 1.15em;
+}
+
 
 h1 > a,
 h2 > a,
@@ -110,7 +128,7 @@ h4,
 h5,
 h6 {
   padding: 4px 6px 5px;
-  font-size: 1.5em;
+  /* font-size: 1.5em; */
   font-weight: bold;
   clear: both;
   margin-left: -6px;
@@ -257,6 +275,11 @@ div.topic {
 
 div.body div.section:first-of-type h1 a{
   color: var(--clr-text-primary);
+}
+
+
+.toctree-wrapper p.caption {
+  font-weight: 600;
 }
 
 .section div.contents {
@@ -421,6 +444,7 @@ table.highlighttable div.linenodiv {
   height: 0;
 }
 
+
 /*#endregion Global */
 
 /*#region Headerlink */
@@ -459,6 +483,7 @@ div.code-block-caption:hover > a.headerlink {
   font-family: "Font Awesome 5 Free";
   content: "\f0c1";
   visibility: visible;
+  font-weight: 600;
 }
 /*#endregion Headerlink */
 
