@@ -512,6 +512,19 @@ div.code-block-caption:hover > a.headerlink {
   width: 90.75vw;
 }
 
+.scroll-block {
+  height: 100%;
+  overflow: hidden;
+}
+
+div#nav-menu {
+  transition: background-color 0.2s ease-in;
+}
+
+div#nav-menu div.nav-menu-wrapper {
+  transition: right 0.1s ease-in;
+}
+
 @media only screen and (max-width: 767px) {
   .uedoc-header div#nav-menu{
     position: absolute;
@@ -521,9 +534,17 @@ div.code-block-caption:hover > a.headerlink {
     left: 0;
     right: 0;
     z-index: 1012;
-    background-color: rgba(0, 0, 0, 0.75);
     justify-content: flex-end;
   }
+
+  .open-nav{
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  div.open-nav div.nav-menu-wrapper{
+    right: 0 !important;
+  }
+
 
   .uedoc-header div#nav-menu div.nav-menu-wrapper {
     height: calc(100% - 54px);
@@ -531,6 +552,8 @@ div.code-block-caption:hover > a.headerlink {
     max-width: 100%;
     flex-direction: column;
     align-items: stretch;
+    position: relative;
+    right: -90.75vw;
   }
 
   div.uedoc-quicklinks-wrapper {
