@@ -1,5 +1,5 @@
 
-var uedoc_theme = {
+var docTheme = {
 	styleElement: '#uedoc_theme',
 
 	getSafeValue: (nmb) => {
@@ -13,31 +13,30 @@ var uedoc_theme = {
 	getColor: (clr, type) => {
 		if ($.isArray(clr)) {
 			return clr.map(function (clrElem, index) {
-				console.log(clrElem)
 				switch (type) {
 					case 'hsl':
 						if (index != 0) {
-							return uedoc_theme.convertToPercent(uedoc_theme.getSafeValue(clrElem));
+							return docTheme.convertToPercent(docTheme.getSafeValue(clrElem));
 						}
-						return uedoc_theme.getSafeValue(clrElem);
+						return docTheme.getSafeValue(clrElem);
 					default:
-						return uedoc_theme.getSafeValue(clrElem);
+						return docTheme.getSafeValue(clrElem);
 				}
 			});
 		} else {
-			return uedoc_theme.getSafeValue(clr)
+			return docTheme.getSafeValue(clr)
 		}
 	},
 
 	setThemeColor: (key, clr) => {
-		var color = uedoc_theme.getColor(chroma(clr).hsl(), 'hsl');
+		var color = docTheme.getColor(chroma(clr).hsl(), 'hsl');
 		$(':root').css(`${key}-h`, color[0]);
 		$(':root').css(`${key}-s`, color[1]);
 		$(':root').css(`${key}-l`, color[2]);
 	},
 
-	generateTheme: () => {
-		var css = $(uedoc_theme.styleElement).html();
+	generateTheme: (css) => {
+		var css = $(docTheme.styleElement).html();
 		var theme = localStorage.getItem("theme");
 
 		if (!theme) {
@@ -49,19 +48,35 @@ var uedoc_theme = {
 		for (const color in themeCss) {
 			if (themeCss.hasOwnProperty(color)) {
 				const theme_color = themeCss[color];
-				uedoc_theme.setThemeColor(`--clr-${color}`, theme_color);
+				docTheme.setThemeColor(`--clr-${color}`, theme_color);
 			}
 		}
 	},
 
 	registerTheme: (theme, css) => {
-		localStorage.setItem('theme', theme);
-		var themecss = JSON.parse($(uedoc_theme.styleElement).html());
+		var themecss = JSON.parse($(docTheme.styleElement).html());
 		themecss[theme] = css;
-		$(uedoc_theme.styleElement).html(JSON.stringify(themecss, null, 2));
+		$(docTheme.styleElement).html(JSON.stringify(themecss, null, 2));
+	},
+
+	switchTheme: (theme) => {
+		localStorage.setItem('theme', theme);
+		docTheme.generateTheme();
+	},
+
+	renderWith: (css) => {
+		docTheme.registerTheme('render', css);
+		docTheme.switchTheme('render');
+		docTheme.generateTheme();
 	}
 };
 
 $(window).on('load', function () {
-	uedoc_theme.generateTheme();
+	// docTheme.registerTheme('newdefault', {
+	// 	"background": "#0aaff0", 
+	// 	"primary": "hsl(0,0%, 16%)", 
+	// 	"secondary": "#0aaff0"
+	// })
+	// docTheme.switchTheme('newdefault');
+	docTheme.generateTheme();
 })
