@@ -5,19 +5,24 @@
 	{% block uedoc_title %}
 		<div class="uedoc-title"><a href="{{pathto(master_doc)}}">{{docstitle|upper}}</a></div>
 	{% endblock uedoc_title %}
-	{% block uedoc_header_nav %}{% endblock uedoc_header_nav %}
-	<div class="uedoc-quicklinks-wrapper">
-		<ul id="quicklinks" class="uedoc-quicklinks">
-		{% for link in theme_quicklinks %}
-			<li role="menuitem"><a href="{{link['link']}}"><p>{{link['name']}}</p></a></li>
-		{% endfor %}
-		</ul>
-	</div>
-	{% block uedoc_header_right %}
-		<div class="header-button">
-			<a href="{{theme_header_button['link']}}">
-				<span>{{theme_header_button['name']}}</span>
-			</a>
+	<div class="hamburger-nav header-button"><i class="fas fa-bars"></i></div>
+	<div id="nav-menu">
+		<div class="nav-menu-wrapper">
+			{% block uedoc_header_nav %}{% endblock uedoc_header_nav %}
+			<div class="uedoc-quicklinks-wrapper">
+				<ul id="quicklinks" class="uedoc-quicklinks">
+				{% for link in theme_quicklinks %}
+					<li role="menuitem"><a href="{{link['link']}}"><p>{{link['name']}}</p></a></li>
+				{% endfor %}
+				</ul>
+			</div>
+			{% block uedoc_header_right %}
+				<div class="header-button">
+					<a href="{{theme_header_button['link']}}">
+						<span>{{theme_header_button['name']}}</span>
+					</a>
+				</div>
+			{% endblock uedoc_header_right %}
 		</div>
-	{% endblock uedoc_header_right %}
+	</div>
 </div>
