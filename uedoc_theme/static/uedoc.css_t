@@ -212,6 +212,14 @@ div.body{
   width: 100%;
 }
 
+.section {
+  padding-bottom: 1em;
+}
+
+div.section .section {
+  padding-bottom: unset;
+}
+
 @media only screen and (max-width: 1280px) {
 
   .bodywrapper div.body div.section:first-of-type h1 {
