@@ -526,12 +526,12 @@ div#nav-menu div.nav-menu-wrapper {
 }
 
 @media only screen and (max-width: 767px) {
-  .uedoc-header div#nav-menu{
+  .uedoc-header div#nav-menu {
     position: absolute;
     display: flex;
     top: 54px;
     bottom: 0;
-    left: 0;
+    left: 100vw;
     right: 0;
     z-index: 1012;
     justify-content: flex-end;
@@ -539,6 +539,7 @@ div#nav-menu div.nav-menu-wrapper {
 
   .open-nav{
     background-color: rgba(0, 0, 0, 0.75);
+    left: 0 !important;
   }
 
   div.open-nav div.nav-menu-wrapper{
