@@ -58,8 +58,10 @@
   --clr-text-secondary: hsl(var(--clr-text-secondary-hsl));
   --clr-text-background: hsl(var(--clr-text-background-hsl));
 
+  /* Scrollbars colors */
+  --clr-scrollbar: transparent;
+  --clr-scrollbar-thumb: hsla(var(--clr-primary-hs), 82%, 0.6);
 }
-
 
 /*#region Global */
 
@@ -175,10 +177,6 @@ a {
   /* #303030; */
 }
 
-html {
-  --scrollbarBG: transparent;
-  --thumbBG: hsla(var(--clr-primary-hs), 82%, 0.6);
-}
 
 *::-webkit-scrollbar {
   width: 8px;
@@ -186,15 +184,15 @@ html {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  scrollbar-color: var(--clr-scrollbar-thumb) var(--clr-scrollbar);
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
+  background: var(--clr-scrollbar);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG);
+  background-color: var(--clr-scrollbar-thumb);
   border-radius: 6px;
 }
 
@@ -982,9 +980,7 @@ div.gutter::after{
   content: "";
   height: 100%;
   width: 3px;
-  /* left: 50%; */
   background-color: hsl(var(--clr-background-hs), 75%);
-  /* transform: translate(-50%, 0); */
 }
 
 div.gutter:active::before{
@@ -1466,10 +1462,3 @@ div.search_page li a:hover{
 }
 
 /*#endregion Search_page */
-
-/* DEUBUG LAYOUT */
-/* * {
-  background: #000 !important;
-  color: #0f0 !important;
-  outline: solid #f00 1px !important;
-} */
