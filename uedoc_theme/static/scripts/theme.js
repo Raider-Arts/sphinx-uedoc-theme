@@ -58,6 +58,7 @@ var docTheme = {
 				docTheme.setThemeColor(color, themeCss[color]);
 			}
 		}
+		$('body').css('visibility', 'visible');
 	},
 
 	registerTheme: (theme, css) => {

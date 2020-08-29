@@ -71,6 +71,7 @@ body {
   color: var(--clr-text-background);
   line-height: 1.75em;
   padding: 0;
+  visibility: hidden;
 }
 
 div.documentwrapper {
@@ -1051,6 +1052,7 @@ div.sphinxsidebar form {
   box-sizing: initial !important;
   font-family: Arial;
   font-size: 0.85em;
+  background: var(var(--clr-background-hs), 90%);
 }
 
 /*#endregion Filter Pages  */
@@ -1231,8 +1233,9 @@ div#search_container {
   font-family: Brutal_Regular,Verdana,Arial,sans serif;
   font-size: 14px;
   border: 1px solid hsl(var(--clr-background-hs), 88%);
-  background: var(--clr-background-hsl);
+  background: var(var(--clr-background-hs), 90%);
 }
+
 /*#endregion Related */
 
 /*#region Footer */
