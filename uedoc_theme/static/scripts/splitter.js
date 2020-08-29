@@ -16,10 +16,12 @@ function createSplitter() {
 		splitter = null
 	}
 	if (!isMobile()) {
-		splitter = window.Split(['#sidebar', '#document'], {
-			sizes: [18, 100],
-			minSize: [300, 450],
-		})
+		try {
+			splitter = window.Split(['#sidebar', '#document'], {
+				sizes: [18, 100],
+				minSize: [300, 450],
+			})
+		} catch (error) {}
 	}	
 }
 $(window).on('load', createSplitter)
