@@ -84,6 +84,6 @@ $(window).on('load', function () {
 	// 	"primary": "hsl(0,0%, 16%)", 
 	// 	"secondary": "#0aaff0"
 	// })
-	// docTheme.switchTheme('newdefault');
+	docTheme.switchTheme('default');
 	docTheme.generateTheme();
 })

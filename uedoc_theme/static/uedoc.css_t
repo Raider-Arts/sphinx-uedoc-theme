@@ -752,7 +752,7 @@ div#sidebar li.selected-link > a{
 }
 
 div#sidebar li.selected-link > a div.sidebar-list-hover-wrapper{
-  background-color: hsl(var(--clr-text-primary-hs), 85%);
+  background-color: hsl(var(--clr-primary-hs), 85%);
 }
 
 div#sidebar::-webkit-scrollbar {
@@ -1047,7 +1047,7 @@ div.sphinxsidebar form {
   width: calc(100% - 32px) !important;
   padding: 4px 16px !important;
   border-width: 0 0 1px 0;
-  border-color: #767676;
+  border-color: hsl(var(--clr-background-hs), 46%);
   box-sizing: initial !important;
   font-family: Arial;
   font-size: 0.85em;
@@ -1060,7 +1060,7 @@ div.sphinxsidebar form {
 /*#region localtoc */
 
 div#uedoc-localtoc .current-reading > a{
-  background-color: #d8d8d8;
+  background-color: hsl(var(--clr-background-hs), 85%);
   font-weight: bold;
 }
 
@@ -1070,7 +1070,7 @@ div#localtoc h3 {
   font-weight: bold;
   border-radius: 0 0 0 0;
   font-size: 1em;
-  color: #000;
+  color: var(--clr-text-primary-hsl);
   letter-spacing: 1px;
   font-family: Brutal_Regular,Verdana,Arial,sans serif;
   text-transform: uppercase;
@@ -1094,7 +1094,7 @@ div#uedoc-localtoc li {
 }
 
 div#uedoc-localtoc li a {
-  color: #000;
+  color: var(--clr-text-primary-hsl);
   opacity: 1;
   display: block;
   padding: 8px 8px;
@@ -1132,7 +1132,7 @@ div.localtocwrapper {
   position: sticky;
   top: 20px;
   width: 312px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid hsl(var(--clr-background-hs), 88%);
   font-family: Brutal_Regular,Verdana,Arial,sans serif;
   display: block;
   margin: 20px 36px 20px 0;
@@ -1148,7 +1148,7 @@ div.localtocwrapper {
 div.related {
   height: 83px;
   padding: 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid hsl(var(--clr-background-hs), 88%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1172,7 +1172,7 @@ div.related ul {
 div.related a {
   text-decoration: none;
   opacity: 1;
-  color: #000;
+  color: var(--clr-text-primary-hsl);
 }
 
 span.separator {
@@ -1181,7 +1181,7 @@ span.separator {
 }
 
 ul span#page {
-  color: #000;
+  color: var(--clr-text-primary-hsl);
   opacity: .75;
   padding-right: 42px;
 }
@@ -1223,15 +1223,15 @@ div#search_container {
 }
 
 #search_container .searchbox {
-  color: #000;
+  color: var(--clr-text-primary-hsl);
   opacity: .75;
   margin: 0;
   padding: 13px 42px 13px 17px;
   width: 404px;
   font-family: Brutal_Regular,Verdana,Arial,sans serif;
   font-size: 14px;
-  border: 1px solid #e0e0e0;
-  background: #fff;
+  border: 1px solid hsl(var(--clr-background-hs), 88%);
+  background: var(--clr-background-hsl);
 }
 /*#endregion Related */
 
@@ -1248,13 +1248,13 @@ div.footer {
   padding: 1.25em 4.5em 2.5em;
   z-index: 10;
 
-  border-color: #333!important;
-  background-color: #2a2a2a;
-  border-top: 1px solid #ccc;
+  border-color: hsl(var(--clr-background-hs), 20%)!important;
+  background-color: hsl(var(--clr-primary-hs), 16%);
+  border-top: 1px solid hsl(var(--clr-primary-hs), 80%);
 }
 
 div.footer, div.footer a{
-  color: #e7e7e7;
+  color: hsl(var(--clr-primary-hs), 91%);
 }
 
 div.social-links {
@@ -1289,15 +1289,15 @@ div.footer button{
 div.footer a:hover, 
 div.footer button:hover,
 div.footer button span:hover{
-  color: #0aaff1
+  color: var(--clr-secondary)
 }
 
 div.footer button:hover{
-  border-color: #0aaff1
+  border-color: var(--clr-secondary)
 }
 
 div.footer {
-  color: #ccc;
+  color: hsl(var(--clr-text-primary-hs), 80%);
 }
 
 div.footer ul.footer_links {
@@ -1330,12 +1330,12 @@ span.footer_copyright {
 }
 
 button.sendto_top {
-  color: #ccc;
+  color: hsl(var(--clr-text-primary-hs), 80%);
   cursor: pointer;
   float: right;
   width: 2.1em;
   height: 2.1em;
-  border: 2px solid #fff;
+  border: 2px solid var(--clr-background);
   padding: .25em;
   border-radius: 2px;
   margin: 1.25em 1em 0 0;
@@ -1365,7 +1365,7 @@ div.search_page h1 {
 }
 
 div.search_page form {
-  background-color: rgb(10, 175, 241);
+  background-color: var(--clr-secondary);
   height: 45px;
   padding-left: 2px;
   position: relative;
@@ -1395,7 +1395,7 @@ div.search_page form input[type=submit] {
   top: 0px;
   font-weight: 500;
   text-align: center;
-  color: white;
+  color: var(--clr-text-secondary);
   font-size: 1.1em;
   padding: 0px;
   border-width: 0px;
@@ -1441,7 +1441,7 @@ div.search_page li {
 }
 
 div.search_page li a:hover{
-  color: #0aaff1
+  color: var(--clr-secondary)
 }
 
 @media only screen and (min-width: 768px) {
