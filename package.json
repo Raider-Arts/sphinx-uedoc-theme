@@ -1,0 +1,31 @@
+{
+  "name": "sphinx-uedoc-theme",
+  "version": "1.0.0",
+  "description": "Unreal Engine Documentation inspired theme for Sphinx",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sass-loader": "^10.0.1",
+    "webpack": "^4.44.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raider-Arts/sphinx-uedoc-theme.git"
+  },
+  "keywords": [
+    "theme",
+    "sphinx",
+    "uedoc",
+    "unreal",
+    "engine"
+  ],
+  "author": "Luca Faggion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Raider-Arts/sphinx-uedoc-theme/issues"
+  },
+  "homepage": "https://github.com/Raider-Arts/sphinx-uedoc-theme#readme"
+}
