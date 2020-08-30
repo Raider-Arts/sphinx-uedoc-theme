@@ -5,11 +5,19 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "chroma-js": "^2.1.0",
+    "css-loader": "^4.2.2",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.4.1",
+    "jquery": "^3.5.1",
     "sass-loader": "^10.0.1",
-    "webpack": "^4.44.1"
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

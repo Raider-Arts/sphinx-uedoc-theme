@@ -1,16 +1,27 @@
+const path = require('path');
 
 module.exports = {
+  entry: './src/bundle.js',
+  mode: 'development',
+  watch: true,
+  output: {
+    filename: './main.js',
+    path: path.resolve(__dirname, 'uedoc_theme_wp'),
+  },
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
+          'file-loader?name=fonts/[name].[ext]!static'
         ],
       },
     ],
