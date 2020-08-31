@@ -1,0 +1,21 @@
+@import 'font.css';
+
+body {
+	background-color: gray;
+}
+
+p {
+	border-bottom: 1px solid red;
+}
+
+.brutal {
+	font-family: 'OpenSans_Regular';
+}
+
+.image {
+	width: 200px;
+	height: 200px;
+	background-image: url('images/ue-logo.png');
+	background-repeat: no-repeat;
+    background-size: contain;
+}
