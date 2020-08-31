@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -12,14 +11,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].css", // change this RELATIVE to your output.path!
-  }),
-    // new HtmlWebpackPlugin({
-    //   title: 'Sphinx uedoc theme',
-    //   template: "./src/layout.ejs",
-    //   filename: path.resolve(__dirname, 'uedoc_theme_wp') + '/webpack_layout.html',
-    //   inject: 'head'
-    // }),
+      filename: "css/[name].css",
+    }),
     new CopyPlugin({
       patterns: [
         {
@@ -39,9 +32,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s?[ac]ss$/i,
         use: [
-          // { loader: 'style-loader', options: { injectType: 'linkTag' } },
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
@@ -50,12 +42,9 @@ module.exports = {
             }
           },
           'css-loader',
+          'sass-loader',
         ],
         sideEffects: true
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader?name=images/[name].[ext]'],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -64,8 +53,21 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]?[hash]',
-              outputPath: 'css/fonts/',
-              // publicPath: 'fonts/',
+              outputPath: 'fonts/',
+              publicPath: '../fonts/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]?[hash]',
+              outputPath: 'images/',
+              publicPath: 'images/',
             },
           },
         ],
