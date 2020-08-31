@@ -15,7 +15,7 @@ p {
 .image {
 	width: 200px;
 	height: 200px;
-	background-image: url('images/ue-logo.png');
+	background-image: url('./images/UE_Logo_Icon_White.png');
 	background-repeat: no-repeat;
     background-size: contain;
 }

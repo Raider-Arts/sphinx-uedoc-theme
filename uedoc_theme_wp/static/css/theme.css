@@ -1,0 +1,59 @@
+/* Unreal Engine 4 Sphinx theme Fonts */
+
+/* 
+  Online Web Fonts (http://www.onlinewebfonts.com)
+  Font Copyright of respective owner, licensed by CC BY 3.0
+*/
+@font-face {
+	font-family: 'Brutal_Regular';
+	src: url(../fonts/BrutalType-Regular.eot?b9848a2312d7272470bc6b1728e58dd7); /* IE9 Compat Modes */
+	src: url(../fonts/BrutalType-Regular.eot?b9848a2312d7272470bc6b1728e58dd7?#iefix) format('embedded-opentype'), 
+	  url(../fonts/BrutalType-Regular.woff2?7bc10a83799597dfeed8f31b2caafc89) format('woff2'), 
+	  url(../fonts/BrutalType-Regular.woff?fb64664a41f9789dfab9377a68505cc3) format('woff'), 
+	  url(../fonts/BrutalType-Regular.ttf?9901514add9ae673fcc81872b03a80f9) format('truetype'), 
+	  url(../fonts/BrutalType-Regular.svg?6e0bf21121362a3e6f2d2dca03e503df#BrutalType-Medium) format('svg'); /* Legacy iOS */
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+  }
+  
+  /* 
+	Google Fonts (open-sans-regular - latin)
+  */
+  @font-face {
+	font-family: 'OpenSans_Regular';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/open-sans-v17-latin-regular.eot?b9e56724ef49012eeb57bf453a940881); /* IE9 Compat Modes */
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+	  url(../fonts/open-sans-v17-latin-regular.eot?b9e56724ef49012eeb57bf453a940881?#iefix) format('embedded-opentype'), 
+	  url(../fonts/open-sans-v17-latin-regular.woff2?f57a62e9efddf6ace18b15572f81905b) format('woff2'), 
+	  url(../fonts/open-sans-v17-latin-regular.woff?347639ec49f4b2884a9657afded83ace) format('woff'), 
+	  url(../fonts/open-sans-v17-latin-regular.ttf?cf6a34547195e0972978eab2aa4d2fb2) format('truetype'), 
+	  url(../fonts/open-sans-v17-latin-regular.svg?a735d02e75dda771a8dc17c1a3f64e35#OpenSans) format('svg'); /* Legacy iOS */
+  }
+body {
+  background-color: gray; }
+
+p {
+  border-bottom: 1px solid red; }
+
+.brutal {
+  font-family: 'OpenSans_Regular'; }
+
+.image {
+  width: 200px;
+  height: 200px;
+  background-image: url(images/UE_Logo_Icon_White.png?3fa20f04676571174fd52e4692c2cb8d);
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: red;
+  font-size: 50px; }
+

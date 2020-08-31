@@ -3,6 +3,8 @@
 *	Hide the splitter only on mobile and when resultion is lower than 1280px
 *	author: Luca Faggion
 */
+import $ from 'jquery';
+import { isMobile } from './utilities.js'
 
 var splitter = null
 
@@ -21,9 +23,13 @@ function createSplitter() {
 				sizes: [18, 100],
 				minSize: [300, 450],
 			})
-		} catch (error) {}
-	}	
+		} catch (error) { }
+	}
+	console.log("Splitter initialized or created");
 }
 
+/**
+ * Register events
+ */
 $(window).on('load', createSplitter)
 $(window).on('resize', createSplitter)
