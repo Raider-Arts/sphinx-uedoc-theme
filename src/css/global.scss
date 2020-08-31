@@ -1,0 +1,64 @@
+@import './utils.scss';
+@import '../fonts/font.css';
+@import './variables.scss';
+
+body {
+  background-color: var(--clr-background);
+  margin: 0;
+  font-size: 13px;
+  font-family: OpenSans_Regular, Verdana, Arial, sans serif;
+  color: var(--clr-text-background);
+  line-height: 1.75em;
+  padding: 0;
+  // visibility: hidden;
+}
+
+@mixin base_headers_style {
+
+}
+
+div.documentwrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+@include headings('.toctree-wrapper p.caption') {
+	font-size: 1.5em;
+  overflow: hidden;
+  font-family: Brutal_Regular, Verdana, Arial, sans serif;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+
+h2 {
+  font-size: 1.35em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+@include headings_at(4,7){
+  font-size: 1.15em;
+}
+
+
+@include headings(){
+	& > a {
+		color: var(--clr-text-background);
+		text-decoration: none;
+	}
+}
+
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   margin-top: 1.75em;
+//   line-height: 1em;
+//   margin-bottom: 1.25em;
+// }

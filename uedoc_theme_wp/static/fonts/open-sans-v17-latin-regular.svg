@@ -1,1 +1,1 @@
-export default "images/open-sans-v17-latin-regular.svg?1d0d8b66fa1da76d69b95b6d0ed5cca9";
+export default "../images/open-sans-v17-latin-regular.svg?1d0d8b66fa1da76d69b95b6d0ed5cca9";

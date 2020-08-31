@@ -11,7 +11,7 @@
 	  url(../fonts/BrutalType-Regular.woff2?7bc10a83799597dfeed8f31b2caafc89) format('woff2'), 
 	  url(../fonts/BrutalType-Regular.woff?fb64664a41f9789dfab9377a68505cc3) format('woff'), 
 	  url(../fonts/BrutalType-Regular.ttf?9901514add9ae673fcc81872b03a80f9) format('truetype'), 
-	  url(../fonts/BrutalType-Regular.svg?6e0bf21121362a3e6f2d2dca03e503df#BrutalType-Medium) format('svg'); /* Legacy iOS */
+	  url(../fonts/BrutalType-Regular.svg?6a3016ae3b5998f1f47650e766adf59b#BrutalType-Medium) format('svg'); /* Legacy iOS */
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -30,30 +30,99 @@
 	  url(../fonts/open-sans-v17-latin-regular.woff2?f57a62e9efddf6ace18b15572f81905b) format('woff2'), 
 	  url(../fonts/open-sans-v17-latin-regular.woff?347639ec49f4b2884a9657afded83ace) format('woff'), 
 	  url(../fonts/open-sans-v17-latin-regular.ttf?cf6a34547195e0972978eab2aa4d2fb2) format('truetype'), 
-	  url(../fonts/open-sans-v17-latin-regular.svg?a735d02e75dda771a8dc17c1a3f64e35#OpenSans) format('svg'); /* Legacy iOS */
+	  url(../fonts/open-sans-v17-latin-regular.svg?9bf6e745ced6078cac27110e8eb6df51#OpenSans) format('svg'); /* Legacy iOS */
   }
+/*
+*	Headings mixing to target all headers 		
+*/
+:root {
+  /* This variables can be automatically set from the theme, see Theming docs*/
+  --clr-background-h: 0;
+  --clr-background-s: 0%;
+  --clr-background-l: 100%;
+  --clr-primary-h: 0;
+  --clr-primary-s: 0%;
+  --clr-primary-l: 16%;
+  --clr-secondary-h: 197;
+  --clr-secondary-s: 92%;
+  --clr-secondary-l: 49%;
+  --clr-text-primary-h: 0;
+  --clr-text-primary-s: 0%;
+  --clr-text-primary-l: 100%;
+  --clr-text-secondary-h: 0;
+  --clr-text-secondary-s: 0%;
+  --clr-text-secondary-l: 100%;
+  --clr-text-background-h: 0;
+  --clr-text-background-s: 0%;
+  --clr-text-background-l: 0%;
+  /* 
+	* Automatically generated values, please do not override from theme,
+	* If you still want to override them be sure to respect the original format
+	*/
+  --clr-primary-hs: var(--clr-primary-h), var(--clr-primary-s);
+  --clr-background-hs: var(--clr-background-h), var(--clr-background-s);
+  --clr-secondary-hs: var(--clr-secondary-h), var(--clr-secondary-s);
+  --clr-text-primary-hs: var(--clr-text-primary-h), var(--clr-text-primary-s);
+  --clr-text-secondary-hs: var(--clr-text-secondary-h),
+    var(--clr-text-secondary-s);
+  --clr-text-background-hs: var(--clr-text-background-h),
+    var(--clr-text-background-s);
+  --clr-background-hsl: var(--clr-background-hs), var(--clr-background-l);
+  --clr-primary-hsl: var(--clr-primary-hs), var(--clr-primary-l);
+  --clr-secondary-hsl: var(--clr-secondary-hs), var(--clr-secondary-l);
+  --clr-text-primary-hsl: var(--clr-text-primary-hs), var(--clr-text-primary-l);
+  --clr-text-secondary-hsl: var(--clr-text-secondary-hs),
+    var(--clr-text-secondary-l);
+  --clr-text-background-hsl: var(--clr-text-background-hs),
+    var(--clr-text-background-l);
+  /* This variables can be set/overwritten from the theme */
+  --clr-background: hsl(var(--clr-background-hsl));
+  --clr-primary: hsl(var(--clr-primary-hsl));
+  --clr-secondary: hsl(var(--clr-secondary-hsl));
+  --clr-primary-gradient-start: hsla(var(--clr-primary-hsl), 0);
+  --clr-primary-gradient-end: hsla(var(--clr-primary-hsl), 0.95);
+  --clr-text-primary: hsl(var(--clr-text-primary-hsl));
+  --clr-text-secondary: hsl(var(--clr-text-secondary-hsl));
+  --clr-text-background: hsl(var(--clr-text-background-hsl));
+  /* Scrollbars colors */
+  --clr-scrollbar: transparent;
+  --clr-scrollbar-thumb: hsla(var(--clr-primary-hs), 82%, 0.6); }
+
 body {
-  background-color: gray; }
+  background-color: var(--clr-background);
+  margin: 0;
+  font-size: 13px;
+  font-family: OpenSans_Regular, Verdana, Arial, sans serif;
+  color: var(--clr-text-background);
+  line-height: 1.75em;
+  padding: 0; }
 
-p {
-  border-bottom: 1px solid red; }
+div.documentwrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row; }
 
-.brutal {
-  font-family: 'OpenSans_Regular'; }
+h1, h2, h3, h4, h5, h6, .toctree-wrapper p.caption {
+  font-size: 1.5em;
+  overflow: hidden;
+  font-family: Brutal_Regular, Verdana, Arial, sans serif;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */ }
 
-.image {
-  width: 200px;
-  height: 200px;
-  background-image: url(images/UE_Logo_Icon_White.png?3fa20f04676571174fd52e4692c2cb8d);
-  background-repeat: no-repeat;
-  background-size: contain; }
+h2 {
+  font-size: 1.35em; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: red;
-  font-size: 50px; }
+h3 {
+  font-size: 1.25em; }
+
+h4, h5, h6 {
+  font-size: 1.15em; }
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: var(--clr-text-background);
+  text-decoration: none; }
 

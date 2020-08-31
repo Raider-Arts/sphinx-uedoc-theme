@@ -12,7 +12,7 @@ var splitter = null
  * Create the splitter and set the global variable
  * If the splitter already exist delete it
  */
-function createSplitter() {
+export function createSplitter() {
 	if (splitter) {
 		splitter.destroy()
 		splitter = null

@@ -1,0 +1,67 @@
+$headings: h1, h2, h3, h4, h5, h6;
+
+@function getHeadings($from: 1, $to: 6) {
+	$result: ();
+	@for $i from $from to $to {
+		$result: append($result, h#{$i}, 'comma')
+	}
+	@return $result;
+}
+
+@function invert($color, $amount: 100%) {
+  $inverse: change-color($color, $hue: hue($color) + 180);
+  @return mix($inverse, $color, $amount);
+}
+
+/*
+*	Headings mixing to target all headers 		
+*/
+@mixin headings_at($from: 1, $to: 7, $chains...) {
+	$heads: getHeadings($from,$to);
+	$selectors: ();
+	@each $b in $chains {
+			$selectors: append($selectors, unquote('#{$b}'), comma);
+	}
+	#{$heads},#{$selectors} {
+		@content;
+	}
+}
+
+@mixin headings($chains...) {
+	@include headings_at(1, 7, $chains){
+		@content;
+	};
+}
+
+$breakpoints: (
+	'min-xs': ( min-width:  450px ),
+	'min-sm': ( min-width:  576px ),
+	'min-md': ( min-width:  768px ),
+	'min-lg': ( min-width:  992px ),
+	'min-xl': ( min-width:  1200px ),
+	'max-xs': ( max-width:  450px ),
+	'max-sm': ( max-width:  576px ),
+	'max-md': ( max-width:  768px ),
+	'max-lg': ( max-width:  992px ),
+	'max-xl': ( max-width:  1200px )
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		  + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
