@@ -1,0 +1,8 @@
+{%- if display_toc %}
+  <div id="localtoc">
+    <div class="localtocwrapper">
+      <h3><a href="{{ pathto(master_doc)|e }}">{{ _('on this page') }}</a></h3>
+      <div id="uedoc-localtoc">{{ toc }}</div>
+    </div>
+  </div>
+{%- endif %}
