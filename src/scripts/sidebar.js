@@ -47,7 +47,7 @@ export function calcSidebarHeight() {
 	if (!isMobile()) {
 		$('#sidebar').css('height', String(sidebarHeight)+'px')
 	} else {
-		$('div.sphinxsidebar').css('height', String(sidebarHeight)+'px')
+		$('#sidebar').css('height', String(sidebarHeight)+'px')
 	}
 	if ($('div#sidebarwidgets').length == 0) {
 		var slidebarWidgets = $('div.sphinxsidebarwrapper').children()

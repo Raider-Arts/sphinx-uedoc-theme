@@ -63,9 +63,7 @@ div#localtoc {
 	}
 
 	@include breakpoint(max-xl){
-		div#localtoc {
 			display: none;
-		}
 	}
 }
 
