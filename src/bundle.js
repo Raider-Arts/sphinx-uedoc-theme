@@ -1,3 +1,3 @@
 import './scripts/splitter';
-import './css/global.scss';
+import './css/theme.scss';
 import $ from 'jquery';

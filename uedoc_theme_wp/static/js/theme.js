@@ -105,18 +105,18 @@ eval("var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!\n * jQ
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts_splitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/splitter */ \"./src/scripts/splitter.js\");\n/* harmony import */ var _css_global_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/global.scss */ \"./src/css/global.scss\");\n/* harmony import */ var _css_global_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_global_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/bundle.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts_splitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/splitter */ \"./src/scripts/splitter.js\");\n/* harmony import */ var _css_theme_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/theme.scss */ \"./src/css/theme.scss\");\n/* harmony import */ var _css_theme_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_theme_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/bundle.js?");
 
 /***/ }),
 
-/***/ "./src/css/global.scss":
-/*!*****************************!*\
-  !*** ./src/css/global.scss ***!
-  \*****************************/
+/***/ "./src/css/theme.scss":
+/*!****************************!*\
+  !*** ./src/css/theme.scss ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/global.scss?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/theme.scss?");
 
 /***/ }),
 
