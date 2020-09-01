@@ -1,3 +1,22 @@
+
+/*
+*	Helpers	functions
+*/
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+/*
+*	Headings mixins		
+*/
+
 $headings: h1, h2, h3, h4, h5, h6;
 
 @function getHeadings($from: 1, $to: 6) {
@@ -8,14 +27,6 @@ $headings: h1, h2, h3, h4, h5, h6;
 	@return $result;
 }
 
-@function invert($color, $amount: 100%) {
-  $inverse: change-color($color, $hue: hue($color) + 180);
-  @return mix($inverse, $color, $amount);
-}
-
-/*
-*	Headings mixing to target all headers 		
-*/
 @mixin headings_at($from: 1, $to: 7, $chains...) {
 	$heads: getHeadings($from,$to);
 	$selectors: ();
@@ -33,6 +44,10 @@ $headings: h1, h2, h3, h4, h5, h6;
 	};
 }
 
+
+/*
+*	Breakpoints mixins
+*/
 $breakpoints: (
 	'min-xs': ( min-width:  450px ),
 	'min-sm': ( min-width:  576px ),
@@ -64,4 +79,29 @@ $breakpoints: (
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
 		  + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
+}
+
+
+/*
+* Color manipulations mixins
+*/
+
+@function getColorMap($color) {
+	$color: str-replace($color, 'var(');
+	$color: str-replace($color, ')');
+	@return (
+					'h': var(#{$color+'-h'}), 
+					's': var(#{$color+'-s'}),
+					'l': var(#{$color+'-l'})
+					)
+}
+
+@function alpha($color, $opacity){
+	$color: getColorMap($color);
+  @return hsla(map-get($color,'h'), map-get($color,'s'), map-get($color,'l'), $opacity);
+}
+
+@function setLightness($color, $lightness){
+	$color: getColorMap($color);
+  @return hsl(map-get($color, 'h'), map-get($color,'s'), $lightness);
 }

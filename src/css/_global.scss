@@ -1,6 +1,3 @@
-@import './utils.scss';
-@import '../fonts/font.css';
-@import './variables.scss';
 
 body {
   background-color: var(--clr-background);
@@ -46,19 +43,54 @@ h3 {
 }
 
 
-@include headings(){
+@include headings('dt'){
 	& > a {
 		color: var(--clr-text-background);
 		text-decoration: none;
 	}
+	& > a:visited {
+		color: var(--clr-text-background-dark);
+		text-decoration: none;
+	}
 }
 
-// h2,
-// h3,
-// h4,
-// h5,
-// h6 {
-//   margin-top: 1.75em;
-//   line-height: 1em;
-//   margin-bottom: 1.25em;
-// }
+
+@include headings_at(2,7){
+	padding: 4px 6px 5px;
+  font-weight: bold;
+  clear: both;
+  margin-left: -6px;
+  margin-right: -6px;
+}
+
+p {
+  font-size: 1em;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+
+a {
+  color: setLightness(var(--clr-text-background), 19%);
+	&:visited {
+    background-color: transparent;
+    text-decoration: underline;
+	}
+}
+
+
+* {
+  scrollbar-width: thin;
+	scrollbar-color: var(--clr-scrollbar-thumb) var(--clr-scrollbar);
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--clr-scrollbar-thumb);
+		border-radius: 6px;
+	}
+}
+
+.full-width {
+  width: 100%;
+}
