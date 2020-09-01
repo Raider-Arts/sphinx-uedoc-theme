@@ -1,3 +1,2 @@
-import './scripts/splitter';
+import './scripts/index';
 import './css/theme.scss';
-import $ from 'jquery';

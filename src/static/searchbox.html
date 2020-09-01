@@ -1,0 +1,10 @@
+<div id="navigation"><span>&gt;</span></div>
+{%- if pagename != "search" and builder != "singlehtml" %}
+<div id="searchbox" role="search">
+    <div class="searchformwrapper">
+    <form class="search" method="get" autocomplete="off">
+      <input id="uedoc-filter" placeholder="{{ _('Filter pages...') }}" type="text" name="q" aria-labelledby="searchlabel" />
+    </form>
+    </div>
+</div>
+{%- endif %}

@@ -5,6 +5,7 @@
 */
 import $ from 'jquery';
 import { isMobile } from './utilities.js'
+// import Split from 'split-grid';
 
 var splitter = null
 
