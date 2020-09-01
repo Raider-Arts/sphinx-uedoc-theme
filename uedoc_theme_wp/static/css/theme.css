@@ -822,7 +822,7 @@ div#localtoc {
     height: 14px;
     padding: 0 20px; }
   @media (max-width: 1200px) {
-    div#localtoc div#localtoc {
+    div#localtoc {
       display: none; } }
 
 div.localtocwrapper {
