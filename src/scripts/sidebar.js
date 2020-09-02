@@ -58,11 +58,8 @@ $(window).on('load', () => calcSidebarHeight())
 $(window).on('resize', () => calcSidebarHeight())
 // Resize sidebar also on scroll when the header is outside the screen
 $(window).on('scroll', function (e) {
-	console.log(e);
 	const windowScroll = window.scrollY;
 	const headerSize = ($('#head').height() + $('div.related').height());
-	console.log(headerSize)
-	console.log(windowScroll)
 	if (windowScroll < headerSize) {
 		calcSidebarHeight(windowScroll);
 	} else {
