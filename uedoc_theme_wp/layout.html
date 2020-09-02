@@ -3,6 +3,9 @@
 {# Webpack #}
 {% set script_files = script_files + [pathto('_static/js/theme.js', 1)] %}
 
+{% set css_files = css_files + [pathto('_static/basic.css', 1)] %}
+{% set css_files = css_files + [pathto('_static/css/theme.css', 1)] %}
+
 {# Setting up scripts #}
 {% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"] %}
 {% set script_files = script_files + ["https://kit.fontawesome.com/dff6b54517.js"] %}
@@ -68,27 +71,6 @@
 	</span>
 </div>
 {% endmacro %}
-
-{% block extrahead %}
-<style id="uedoc_theme">
-	{% if theme_color_scheme %}
-	{ 
-		"default": {{ theme_color_scheme }}
-	}
-	{%- else %}
-	{
-		"default": {
-			"background": "#fff", 
-			"primary": "hsl(0, 0%, 16%)", 
-			"secondary": "#0aaff0",
-			"text-primary": "hsl(0, 0%, 100%)",
-			"text-secondary": "hsl(0, 0%, 100%)",
-			"text-background": "hsl(0, 0%, 0%)"
-		}
-	}
-	{% endif %}
-</style>
-{% endblock extrahead %}
 
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}
 
