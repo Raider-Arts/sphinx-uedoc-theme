@@ -27,6 +27,9 @@ module.exports = {
     path: path.resolve(__dirname, 'uedoc_theme_wp/static/'),
     publicPath: '_static/',
   },
+  externals: {
+    jquery: 'jQuery'
+  },
   module: {
     rules: [
       {
