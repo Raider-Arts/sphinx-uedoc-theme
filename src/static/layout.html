@@ -79,7 +79,7 @@
 {% endblock header %}
 
 {% block document %}
-	<div class="documentwrapper">
+	<div class="documentwrapper {{ 'search_page_wrapper' if is_search}}">
 		{% block uedoc_sidebar %}
 			{%- if render_sidebar and not is_search %}
 				<div id="sidebar">
