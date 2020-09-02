@@ -27,6 +27,14 @@ export function readFile(url, onfilecallback) {
 	});
 }
 
+export function isOutOfVerticalSroll(parentDiv, childDiv, offset = 0) {
+	var parentSize = parentDiv.height();
+	var parentScroll = parentDiv.scrollTop();
+    var childvPos = childDiv.position().top;
+
+    return (parentSize + parentScroll - offset) < childvPos;
+}
+
 /**
  * Register events
  */
