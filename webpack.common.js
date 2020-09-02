@@ -17,14 +17,14 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/static/'),
-          to: path.resolve(__dirname, 'uedoc_theme_wp'),
+          to: path.resolve(__dirname, 'uedoc_theme'),
         },
       ],
     }),
   ],
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, 'uedoc_theme_wp/static/'),
+    path: path.resolve(__dirname, 'uedoc_theme/static/'),
     publicPath: '_static/',
   },
   externals: {

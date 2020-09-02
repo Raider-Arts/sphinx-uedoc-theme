@@ -1,15 +1,13 @@
 {% extends "basic/layout.html" %}
 
+{# Webpack #}
+{% set script_files = script_files + [pathto('_static/js/theme.js', 1)] %}
+
+{% set css_files = css_files + [pathto('_static/basic.css', 1)] %}
+{% set css_files = css_files + [pathto('_static/css/theme.css', 1)] %}
+
 {# Setting up scripts #}
-{% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"] %}
 {% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"] %}
-{% set script_files = script_files + ["_static/scripts/utilities.js"] %}
-{% set script_files = script_files + ["_static/scripts/splitter.js"] %}
-{% set script_files = script_files + ["_static/scripts/filter-pages.js"] %}
-{% set script_files = script_files + ["_static/scripts/sidebar.js"] %}
-{% set script_files = script_files + ["_static/scripts/localtoc.js"] %}
-{% set script_files = script_files + ["_static/scripts/theme.js"] %}
-{% set script_files = script_files + ["_static/scripts/nav-header.js"] %}
 {% set script_files = script_files + ["https://kit.fontawesome.com/dff6b54517.js"] %}
 {% set reldelim1 = ">" %}
 
@@ -28,7 +26,7 @@
 	  </ul>
 	  <div id="search_container">
 		<form method="get" action="{{ pathto('search') }}">
-			<input type="image" src="./_static/images/search_box_icon.png" class="searchbutton">
+			<button type="submit" class="searchbutton" > </button>
 			<input type="text" placeholder="Search Documentation..." class="searchbox" name="q" aria-labelledby="searchlabel" autocomplete="off">
 	  </form>
 		</div>
@@ -74,27 +72,6 @@
 </div>
 {% endmacro %}
 
-{% block extrahead %}
-<style id="uedoc_theme">
-	{% if theme_color_scheme %}
-	{ 
-		"default": {{ theme_color_scheme }}
-	}
-	{%- else %}
-	{
-		"default": {
-			"background": "#fff", 
-			"primary": "hsl(0, 0%, 16%)", 
-			"secondary": "#0aaff0",
-			"text-primary": "hsl(0, 0%, 100%)",
-			"text-secondary": "hsl(0, 0%, 100%)",
-			"text-background": "hsl(0, 0%, 0%)"
-		}
-	}
-	{% endif %}
-</style>
-{% endblock extrahead %}
-
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}
 
 {% block header %}
@@ -102,7 +79,7 @@
 {% endblock header %}
 
 {% block document %}
-	<div class="documentwrapper">
+	<div class="documentwrapper {{ 'search_page_wrapper' if is_search}}">
 		{% block uedoc_sidebar %}
 			{%- if render_sidebar and not is_search %}
 				<div id="sidebar">
