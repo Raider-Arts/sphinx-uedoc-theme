@@ -38,10 +38,11 @@ $(window).on('load', function () {
 $(window).on('resize', displayMobileSidebar)
 
 /**
- * Setup the height size of the sidebar to always occupied the remains height of the page
+ * Setup the height size of the sidebar to always occupy the remain height of the page
+ * @param {float} offset the offset to add to the calculated height
  */
-export function calcSidebarHeight() {
-	var sidebarHeight = $(window).height() - ($('#head').height() + $('div.related').height())
+export function calcSidebarHeight(offset = 0) {
+	var sidebarHeight = $(window).height() - ($('#head').height() + $('div.related').height()) + offset
 	if (!isMobile()) {
 		$('#sidebar').css('height', String(sidebarHeight)+'px')
 	} else {
@@ -53,9 +54,21 @@ export function calcSidebarHeight() {
 	}
 	$('div#sidebarwidgets').css('height', String(sidebarHeight-($('div#navigation').height()+$('div#searchbox').height()))+'px')
 }
-$(window).on('load', calcSidebarHeight)
-$(window).on('resize', calcSidebarHeight)
-
+$(window).on('load', () => calcSidebarHeight())
+$(window).on('resize', () => calcSidebarHeight())
+// Resize sidebar also on scroll when the header is outside the screen
+$(window).on('scroll', function (e) {
+	console.log(e);
+	const windowScroll = window.scrollY;
+	const headerSize = ($('#head').height() + $('div.related').height());
+	console.log(headerSize)
+	console.log(windowScroll)
+	if (windowScroll < headerSize) {
+		calcSidebarHeight(windowScroll);
+	} else {
+		calcSidebarHeight(headerSize);
+	}
+})
 /**
  * Setup the height size of the localtoc sidebar
  */

@@ -293,6 +293,8 @@ div.sphinxsidebar form {
     font-family: Arial;
     font-size: 0.85em;
     background: setLightness(var(--clr-background), 97%);
+
+    
   }
 
   @include breakpoint(max-xl) {
