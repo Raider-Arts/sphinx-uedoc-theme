@@ -1,0 +1,81 @@
+div#uedoc-localtoc {
+	.current-reading > a{
+		background-color: setLightness(var(--clr-background), 85%);
+		font-weight: bold;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: .325em 14px 0 30px;
+	}
+
+	li {
+		line-height: 2.5em;
+
+		ul {
+			margin: .325em 0 0 0;
+			padding: 0;
+		}
+
+		a {
+			color: var(--clr-text-primary-hsl);
+			opacity: 1;
+			display: block;
+			padding: 8px 8px;
+			text-decoration: none;
+			position: relative;
+		}
+
+		li a {
+			padding-left: 20px;
+		}
+
+		li li a {
+			padding-left: 40px;
+		}
+
+		li li li a {
+			padding-left: 60px;
+		}
+	}
+}
+
+div#localtoc {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+
+	h3 {
+		position: relative;
+		line-height: 1.3em;
+		font-weight: bold;
+		border-radius: 0 0 0 0;
+		font-size: 1em;
+		color: var(--clr-text-primary-hsl);
+		letter-spacing: 1px;
+		font-family: Brutal_Regular,Verdana,Arial,sans serif;
+		text-transform: uppercase;
+		height: 14px;
+		padding: 0 20px;
+	}
+
+	@include breakpoint(max-xl){
+			display: none;
+	}
+}
+
+div.localtocwrapper {
+  position: sticky;
+  top: 20px;
+  width: 312px;
+  border: 1px solid setLightness(var(--clr-background), 88%);
+  font-family: Brutal_Regular,Verdana,Arial,sans serif;
+  display: block;
+  margin: 20px 36px 20px 0;
+  overflow: hidden auto;
+  text-overflow: ellipsis;
+  background-color: var(--clr-background);
+}

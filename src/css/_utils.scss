@@ -1,0 +1,135 @@
+/*
+*	Helpers	functions
+*/
+
+// replace substring with another string
+// credits: https://css-tricks.com/snippets/sass/str-replace-function/
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace +
+			str-replace(
+				str-slice($string, $index + str-length($search)),
+				$search,
+				$replace
+			);
+	}
+	@return $string;
+}
+
+/*
+*	Headings mixins		
+*/
+
+$headings: h1, h2, h3, h4, h5, h6;
+
+@function getHeadings($from: 1, $to: 6) {
+	$result: ();
+	@for $i from $from to $to {
+		$result: append($result, h#{$i}, 'comma');
+	}
+	@return $result;
+}
+
+@mixin headings_at($from: 1, $to: 7, $chains...) {
+	$heads: getHeadings($from, $to);
+	$selectors: ();
+	@each $b in $chains {
+		$selectors: append($selectors, unquote('#{$b}'), comma);
+	}
+	#{$heads},
+	#{$selectors} {
+		@content;
+	}
+}
+
+@mixin headings($chains...) {
+	@include headings_at(1, 7, $chains) {
+		@content;
+	}
+}
+
+/*
+*	Breakpoints mixins
+*/
+$breakpoints: (
+	'min-xs': (
+		min-width: 450px,
+	),
+	'min-sm': (
+		min-width: 576px,
+	),
+	'min-md': (
+		min-width: 768px,
+	),
+	'min-lg': (
+		min-width: 992px,
+	),
+	'min-xl': (
+		min-width: 1200px,
+	),
+	'max-xs': (
+		max-width: 450px,
+	),
+	'max-sm': (
+		max-width: 576px,
+	),
+	'max-md': (
+		max-width: 768px,
+	),
+	'max-lg': (
+		max-width: 992px,
+	),
+	'max-xl': (
+		max-width: 1200px,
+	),
+) !default;
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin breakpoint($breakpoint) {
+	// If the key exists in the map
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	}
+
+	// If the key doesn't exist in the map
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+			+ "Available breakpoints are: #{map-keys($breakpoints)}.";
+	}
+}
+
+/*
+* Color manipulations mixins
+*/
+
+@function getColorMap($color) {
+	$color: str-replace($color, 'var(');
+	$color: str-replace($color, ')');
+	@return (
+		'h': var(#{$color + '-h'}),
+		's': var(#{$color + '-s'}),
+		'l': var(#{$color + '-l'})
+	);
+}
+
+@function alpha($color, $opacity) {
+	$color: getColorMap($color);
+	@return hsla(
+		map-get($color, 'h'),
+		map-get($color, 's'),
+		map-get($color, 'l'),
+		$opacity
+	);
+}
+
+@function setLightness($color, $lightness) {
+	$color: getColorMap($color);
+	@return hsl(map-get($color, 'h'), map-get($color, 's'), $lightness);
+}
