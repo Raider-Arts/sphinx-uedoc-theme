@@ -31,7 +31,7 @@ $headings: h1, h2, h3, h4, h5, h6;
 	$heads: getHeadings($from,$to);
 	$selectors: ();
 	@each $b in $chains {
-			$selectors: append($selectors, unquote('#{$b}'), comma);
+		$selectors: append($selectors, unquote('#{$b}'), comma);
 	}
 	#{$heads},#{$selectors} {
 		@content;

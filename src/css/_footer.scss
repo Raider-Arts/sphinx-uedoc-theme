@@ -1,0 +1,117 @@
+div.footer {
+	font-size: 16px;
+	font-family: OpenSans, sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	position: relative;
+	padding: 1.25em 4.5em 2.5em;
+	z-index: 10;
+
+	border-color: setLightness(var(--clr-background), 20%) !important;
+	background-color: setLightness(var(--clr-primary), 16%);
+	border-top: 1px solid setLightness(var(--clr-primary), 80%);
+}
+
+div.footer, 
+div.footer a{
+  color: setLightness(var(--clr-primary), 91%);
+}
+
+
+div.social-links {
+  margin-top: 1em;
+  display: flex;
+	flex-direction: row;
+	
+	& > * {
+		padding: 0 .3em;
+		margin: 0 0 .5em;
+	}
+
+	a{
+		font-size: 1.75em;
+	}
+}
+
+div.footer{
+	color: setLightness(var(--clr-text-primary), 80%);
+
+	a,
+	button,
+	button span {
+		-webkit-transition: color .3s ease-in-out;
+		-o-transition: color .3s ease-in-out;
+		transition: color .3s ease-in-out;
+	}
+
+	button{
+		-webkit-transition: border-color .3s ease-in-out;
+		-o-transition: border-color .3s ease-in-out;
+		transition: border-color .3s ease-in-out;
+	}
+
+	a,button,button span {
+		&:hover {
+			color: var(--clr-secondary);
+		}
+	}
+
+	button:hover {
+		border-color: var(--clr-secondary);
+	}
+
+	ul.footer_links {
+		width: fit-content;
+		list-style: none;
+		margin: 0;
+		margin-top: 1em;
+		margin-bottom: 0.75em;
+		padding-left: 0;
+		//change it to reflect user choice
+		column-count: 4;
+	}
+}
+
+ul.footer_links {
+	li {
+		line-height: 1.5em;
+		margin-right: 1.5em;
+	}
+	a {
+		text-decoration: none;
+		font-size: .86em;
+		font-family: OpenSans,sans-serif;
+	}
+}
+
+span.footer_copyright {
+  font-size: .71em;
+  font-family: OpenSans,sans-serif;
+  font-weight: 400;
+  line-height: 2em;
+  padding-left: 1em;
+}
+
+
+button.sendto_top {
+  color: setLightness(var(--clr-text-primary), 80%);
+  cursor: pointer;
+  float: right;
+  width: 2.1em;
+  height: 2.1em;
+  border: 2px solid var(--clr-background);
+  padding: .25em;
+  border-radius: 2px;
+  margin: 1.25em 1em 0 0;
+  font-size: 1.2em;
+  -webkit-transition: border .3s ease-in-out;
+  -o-transition: border .3s ease-in-out;
+  transition: border .3s ease-in-out;
+  background-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
