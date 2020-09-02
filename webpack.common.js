@@ -11,7 +11,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].css",
+      filename: 'css/[name].css',
     }),
     new CopyPlugin({
       patterns: [
@@ -22,8 +22,6 @@ module.exports = {
       ],
     }),
   ],
-  mode: 'development',
-  watch: true,
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'uedoc_theme_wp/static/'),
@@ -38,13 +36,13 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               hmr: false,
-              reloadAll: true
-            }
+              reloadAll: true,
+            },
           },
           'css-loader',
           'sass-loader',
         ],
-        sideEffects: true
+        sideEffects: true,
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -52,7 +50,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]?[hash]',
+              name: '[name].[ext]',
               outputPath: 'fonts/',
               publicPath: '../fonts/',
             },
@@ -65,9 +63,22 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]?[hash]',
+              name: '[name].[ext]',
               outputPath: 'images/',
               publicPath: '../images/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.json_t$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'config/',
+              publicPath: '../config/',
             },
           },
         ],
