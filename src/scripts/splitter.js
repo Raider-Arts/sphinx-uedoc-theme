@@ -26,7 +26,6 @@ export function createSplitter() {
 			})
 		} catch (error) { }
 	}
-	console.log("Splitter initialized or created");
 }
 
 /**

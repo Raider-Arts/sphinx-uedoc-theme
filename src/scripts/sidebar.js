@@ -8,10 +8,8 @@ var sideopen = false
  */
 export function displayMobileSidebar() {
 	if (isMobile()) {
-		console.log('mobile')
 		$('#navigation').css('display', 'block')
 	} else {
-		console.log('not mobile')
 		$('#navigation').css('display', 'none')
 	}
 	
