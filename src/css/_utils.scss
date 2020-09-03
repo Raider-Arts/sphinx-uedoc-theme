@@ -119,7 +119,7 @@ $breakpoints: (
 	);
 }
 
-@function alpha($color, $opacity) {
+@function setAlpha($color, $opacity) {
 	$color: getColorMap($color);
 	@return hsla(
 		map-get($color, 'h'),
@@ -132,4 +132,27 @@ $breakpoints: (
 @function setLightness($color, $lightness) {
 	$color: getColorMap($color);
 	@return hsl(map-get($color, 'h'), map-get($color, 's'), $lightness);
+}
+
+@function setColor($color, $h: null, $s: null, $l: null, $a: null){
+	$prefix: --#{$color};
+	$hue: if($h, $h, var(#{$prefix}-h));
+	$sat: if($s, $s, var(#{$prefix}-s));
+	$light: if($l, $l, var(#{$prefix}-l));
+	$a: if($a, $a, 1.0);
+	@return hsla($hue, $sat, $light, $a);
+}
+
+/*
+* Generate Variables mixins
+*/ 
+@mixin themeVariable($name, $hslmap) {
+	$hsl: h,s,l;
+	$prefix: --#{$name};
+	@each $var in $hsl { 
+		#{$prefix}-#{$var}: map-get($hslmap, $var);
+	}
+	#{$prefix}-hs:  var(#{$prefix}-h),var(#{$prefix}-s);
+	#{$prefix}-hsl: var(#{$prefix}-h),var(#{$prefix}-s),var(#{$prefix}-l);
+	#{$prefix}:     hsl(var(#{$prefix}-h),var(#{$prefix}-s),var(#{$prefix}-l));
 }
