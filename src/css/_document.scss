@@ -275,7 +275,7 @@ a.headerlink {
 	font-size: 14px;
 }
 
-@include headings('div.code-block-caption', 'caption', 'p.caption') {
+@include headings('div.code-block-caption', 'caption', 'p.caption', 'dt') {
 	&:hover > a.headerlink {
 		visibility: hidden;
 		&::after {
