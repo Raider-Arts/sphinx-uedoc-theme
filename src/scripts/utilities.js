@@ -32,7 +32,7 @@ export function isOutOfVerticalSroll(parentDiv, childDiv, offset = 0) {
 	var parentScroll = parentDiv.scrollTop();
     var childvPos = childDiv.position().top;
 
-    return (parentSize + parentScroll - offset) < childvPos;
+    return (parentSize + parentScroll - offset) < childvPos || childvPos < 0.0;
 }
 
 /**
