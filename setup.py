@@ -10,7 +10,7 @@ def local_version(version):
     return str(math.floor(time.time()))
 
 setuptools.setup(
-    name="sphinx-uedoc-theme", # Replace with your own username
+    name="sphinx-uedoc-theme",
     version="0.1.0",
     author="Luca Faggion",
     author_email="luc-af@live.it",
