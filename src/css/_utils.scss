@@ -135,10 +135,19 @@ $breakpoints: (
 }
 
 @function setColor($color, $h: null, $s: null, $l: null, $a: null){
-	$prefix: --#{$color};
-	$hue: if($h, $h, var(#{$prefix}-h));
-	$sat: if($s, $s, var(#{$prefix}-s));
-	$light: if($l, $l, var(#{$prefix}-l));
+	$color: getColorMap($color);
+	$hue:   if($h, $h, map-get($color, 'h'));
+	$sat:   if($s, $s, map-get($color, 's'));
+	$light: if($l, $l, map-get($color, 'l'));
+	$a: if($a, $a, 1.0);
+	@return hsla($hue, $sat, $light, $a);
+}
+
+@function modulateColor($color, $h: null, $s: null, $l: null, $a: null, $op: '+'){
+	$color: getColorMap(--$color);
+	$hue:   if($h, calc(#{map-get($color, 'h')} #{$op} #{$h}),  map-get($color, 'h'));
+	$sat:   if($s, calc(#{map-get($color, 's')} #{$op} #{$s}),  map-get($color, 's'));
+	$light: if($l, calc(#{map-get($color, 'l')} #{$op} #{$l}),  map-get($color, 'l'));
 	$a: if($a, $a, 1.0);
 	@return hsla($hue, $sat, $light, $a);
 }
