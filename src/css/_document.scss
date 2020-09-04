@@ -65,6 +65,21 @@ div.topic {
 	color: var(--clr-text-primary);
 	margin: -47px 0 0 -72px;
 	text-shadow: $text-shadow;
+
+	@include breakpoint(max-sm){
+		width: calc(100% + 47px);
+
+		background-image: -moz-linear-gradient(
+			right,
+			var(--clr-primary-gradient-start) 5%,
+			var(--clr-primary-gradient-end) 85%
+		);
+		background-image: linear-gradient(
+			to left,
+			var(--clr-primary-gradient-start) 5%,
+			var(--clr-primary-gradient-end) 85%
+		);
+	}
 }
 
 @include breakpoint(max-xl) {
@@ -235,6 +250,71 @@ ul ol ol {
 
 ol li {
 	padding: 0.375em 0;
+}
+
+
+// Classes,function and methods tables
+dl {
+	&.class, 
+	&.function,
+	&.attribute,
+	&.method {
+		@include breakpoint(max-sm){
+			margin-left: 0;
+			padding-left: 0;
+
+			
+			dd {
+				margin-left: 10px;
+				padding-left: 0;
+				
+				dl.field-list {
+					grid-template-columns: none;
+					margin-left: 0;
+					padding: 0;
+				}
+			}
+		}
+		
+		& > dt {
+			border-bottom: 2px solid setAlpha(var(--clr-primary), 0.4);
+			background-color: setAlpha(var(--clr-primary), 0.2);
+		}
+		
+		dd { 
+			dt {
+				width: fit-content;
+				border-bottom: 1px solid setAlpha(var(--clr-primary), 0.2);
+				background-color: setAlpha(var(--clr-primary), 0.1);
+			}
+
+			em.property {
+				color: setAlpha(var(--clr-primary), 0.7)
+			}
+		}
+
+		dt {
+			padding-left: 5px;
+		}
+		
+		dl.field-list {
+			dt {
+				border: 0;
+				background-color: transparent;
+			}
+		}
+	}
+
+	.sig-param {
+		color: setAlpha(var(--clr-primary), 0.7)
+	}
+
+	.property {
+		color: var(--clr-secondary);
+		padding-right: 5px;
+	}
+
+	
 }
 
 /** Code **/
