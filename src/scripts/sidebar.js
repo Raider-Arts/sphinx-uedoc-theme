@@ -102,7 +102,7 @@ export function recalculate_tree_state(liElement) {
 export function sidebar_item_click() {
 	event.preventDefault()
 	event.stopPropagation()
-	aParent = $(this).parent()
+	var aParent = $(this).parent()
 	/** change the button icon (::before pseudo element) of the list item based on the state */
 	var state = aParent.data('state')
 	aParent.data('state', !state)
