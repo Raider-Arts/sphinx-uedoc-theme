@@ -1,4 +1,7 @@
 div.footer {
+	display: flex;
+	flex-direction: column;
+
 	font-size: 16px;
 	font-family: OpenSans, sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -101,6 +104,7 @@ span.footer_copyright {
 	font-weight: 400;
 	line-height: 2em;
 	padding-left: 1em;
+	margin-top: auto;
 }
 
 
@@ -108,6 +112,8 @@ button.sendto_top {
 	color: setLightness(var(--clr-text-primary), 80%);
 	cursor: pointer;
 	float: right;
+	position: absolute;
+	right: 0;
 	width: 2.1em;
 	height: 2.1em;
 	border: 2px solid var(--clr-background);
@@ -123,8 +129,4 @@ button.sendto_top {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-
-	@include breakpoint(max-sm) {
-		margin-right: 0;
-	}
 }
