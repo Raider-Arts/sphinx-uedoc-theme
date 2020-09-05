@@ -9,3 +9,5 @@ node_modules
 __pycache__
 .vscode
 Pipfile*
+
+testdoc

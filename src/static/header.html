@@ -29,11 +29,13 @@
 				</ul>
 			</div>
 			{% block uedoc_header_right %}
+			{% if theme_header_button %}
 				<div class="header-button">
 					<a href="{{theme_header_button['link']}}">
 						<span>{{theme_header_button['name']}}</span>
 					</a>
 				</div>
+			{% endif %}
 			{% endblock uedoc_header_right %}
 		</div> 
 	</div>
