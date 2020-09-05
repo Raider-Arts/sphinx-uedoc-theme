@@ -17,7 +17,9 @@
 	{% block uedoc_title %}
 		<div class="uedoc-title"><a href="{{pathto(master_doc)}}">{{docstitle|upper}}</a></div>
 	{% endblock uedoc_title %}
-	<div class="hamburger-nav header-button"><i class="fas fa-bars"></i></div>
+	{% if (theme_quicklinks | length) != 0 %}
+		<div class="hamburger-nav header-button"><i class="fas fa-bars"></i></div>
+	{% endif %}
 	<div id="nav-menu">
 		<div class="nav-menu-wrapper">
 			{% block uedoc_header_nav %}{% endblock uedoc_header_nav %}
