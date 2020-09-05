@@ -70,9 +70,16 @@ div#nav-menu {
   }
 
   div.uedoc-quicklinks-wrapper {
-    height: unset;
+    height: 100%;
+    overflow: hidden scroll;
 
     ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    li {
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
@@ -133,6 +140,10 @@ div#nav-menu {
 }
 
 .uedoc-quicklinks {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: wrap;
   list-style-type: none;
   height: 100%;
   padding: 0;
@@ -141,6 +152,7 @@ div#nav-menu {
   li {
     position: relative;
     height: 100%;
+    min-height: 45px;
   }
 
   p {
@@ -183,6 +195,9 @@ div#nav-menu {
 
   li:hover::before {
     height: 5px;
+    @include breakpoint(max-md){
+      height: 0;
+    }
   }
 }
 
