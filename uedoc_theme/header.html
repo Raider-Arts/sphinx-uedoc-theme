@@ -1,6 +1,18 @@
 <div id="head" class="uedoc-header">
 	{% block uedoc_logo %}
-		<a href="{{pathto(master_doc)}}"><div class="uedoc-logo"></div></a>
+		{%- if logo %}
+			<div class="logo">
+			<a href="{{ pathto(master_doc)|e }}">
+				<img class="logo" src="{{ pathto('_static/' + logo, 1)|e }}" alt="Logo"/>
+			</a>
+			</div>
+		{%- else %}
+			{%- if not theme_no_logo %}
+			<div class="logo">
+				<a href="{{pathto(master_doc)}}"><div class="uedoc-logo"></div></a>
+			</div>
+			{% endif %}
+		{% endif %}
 	{% endblock uedoc_logo %}
 	{% block uedoc_title %}
 		<div class="uedoc-title"><a href="{{pathto(master_doc)}}">{{docstitle|upper}}</a></div>
