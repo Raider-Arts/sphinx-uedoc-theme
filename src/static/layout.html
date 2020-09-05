@@ -35,9 +35,11 @@
 <div class="footer" role="contentinfo">
 	{% block social_icons %}
 	<div class="social-links">
-		{% for social,link in theme_socials.items() %}
-			<div><a href="{{link}}"><i class='fa fa-{{social}}'></i></a></div>
-		{% endfor %}
+		{% if (theme_socials | length) != 0 %}
+			{% for social,link in theme_socials.items() %}
+				<div><a href="{{link}}"><i class='fa fa-{{social}}'></i></a></div>
+			{% endfor %}
+		{% endif %}
 	</div>
 	{% endblock social_icons %}
 	{% if theme_show_totop_button %}
@@ -69,6 +71,10 @@
 	</span>
 </div>
 {% endmacro %}
+
+{% block sidebarlogo %}
+	{# no logo on sidebar #}
+{% endblock sidebarlogo %}
 
 {%- block relbar1 %}{{ uedoc_relbar() }}{% endblock %}
 
