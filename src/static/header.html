@@ -1,3 +1,20 @@
+{% macro rendernav() %}
+	{% for link in theme_quicklinks %}
+		<li role="menuitem">
+			<a href="{{link['link']}}"><p>{{link['name']}}</p></a>
+		{% if 'subnav' in link %}
+			<ul class="uedoc-nav-submenu">
+				{% for sublink in link['subnav'] %}
+				<li role="menuitem">
+					<a href="{{sublink['link']}}"><p>{{sublink['name']}}</p></a>
+				</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+		</li>
+	{% endfor %}
+{% endmacro %}
+
 <div id="head" class="uedoc-header">
 	{% block uedoc_logo %}
 		{%- if logo %}
@@ -21,9 +38,7 @@
 			{% block uedoc_header_nav %}{% endblock uedoc_header_nav %}
 			<div class="uedoc-quicklinks-wrapper">
 				<ul id="quicklinks" class="uedoc-quicklinks">
-				{% for link in theme_quicklinks %}
-					<li role="menuitem"><a href="{{link['link']}}"><p>{{link['name']}}</p></a></li>
-				{% endfor %}
+					{{rendernav()}}
 				</ul>
 			</div>
 			{% block uedoc_header_right %}
