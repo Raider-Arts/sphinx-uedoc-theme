@@ -19,7 +19,8 @@ export function createSplitter() {
 		splitter.destroy()
 		splitter = null
 	}
-	if (!isMobile() && $('#sidebar').get(0)) {
+	if (!isMobile() || !$('#sidebar').get(0)) {
+		$('.gutter').css('display', 'block');
 		splitter = Split({
 			columnGutters: [{
 				track: 1,
