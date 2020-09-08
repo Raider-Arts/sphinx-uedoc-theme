@@ -5,7 +5,6 @@
 {% set css_files = css_files + [pathto('_static/css/theme.css', 1)] %}
 
 {# Setting up scripts #}
-{% set script_files = script_files + ["https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"] %}
 {% set reldelim1 = ">" %}
 
 {%- macro uedoc_relbar() %}
@@ -36,7 +35,8 @@
 	<div class="social-links">
 		{% if (theme_socials | length) != 0 %}
 			{% for social,link in theme_socials.items() %}
-				<div><a href="{{link}}"><i class='fa fa-{{social}}'></i></a></div>
+				{% set icon = social.split(',') %}
+				<div><a href="{{link}}"><i class='{{icon[0] if icon[0] else 'fa'}} fa-{{icon[1]}}'></i></a></div>
 			{% endfor %}
 		{% endif %}
 	</div>
@@ -90,6 +90,7 @@
 				</div>
 			{%- endif %}
 		{% endblock uedoc_sidebar %}
+		<div class="gutter" style="width: 10px;"></div>
 		<div class="bodywrapper 
 			{{ 'full-width' if (not render_sidebar) or is_search }} 
 			{{ 'search_page' if is_search}}" id="document">
