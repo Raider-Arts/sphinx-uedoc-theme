@@ -16,6 +16,10 @@ div.documentwrapper {
   grid-template-columns: 350px 1px 1fr;
   // display: flex;
   // flex-direction: row;
+
+  @include breakpoint(max-md){
+    grid-template-columns: unset;
+  }
 }
 
 

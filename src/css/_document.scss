@@ -357,13 +357,28 @@ a.headerlink {
 
 @include headings('div.code-block-caption', 'caption', 'p.caption', 'dt') {
 	&:hover > a.headerlink {
-		visibility: hidden;
+		svg{
+			visibility: visible;
+		}
+	}
+
+	& > a.headerlink {
+		visibility: hidden !important;
+
 		&::after {
 			font-family: 'Font Awesome 5 Free';
 			content: '\f0c1';
-			visibility: visible;
-			font-weight: 600;
+			display: none;
+			font-weight: 900;
+		}
+
+		svg {
+			display: inline-block;
 		}
 	}
+
+	// &:hover > a.headerlink {
+	// 	display: none;
+	// }
 }
 /*#endregion Headerlink */
