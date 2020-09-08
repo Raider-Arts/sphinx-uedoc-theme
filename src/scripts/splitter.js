@@ -4,7 +4,8 @@
 *	author: Luca Faggion
 */
 import $ from 'jquery';
-import { isMobile } from './utilities.js'
+import { isMobile } from './utilities.js';
+import Split from 'split-grid';
 // import Split from 'split-grid';
 
 var splitter = null
@@ -18,13 +19,16 @@ export function createSplitter() {
 		splitter.destroy()
 		splitter = null
 	}
-	if (!isMobile()) {
-		try {
-			splitter = window.Split(['#sidebar', '#document'], {
-				sizes: [18, 100],
-				minSize: [300, 450],
-			})
-		} catch (error) { }
+	if (!isMobile() && $('#sidebar').get(0)) {
+		splitter = Split({
+			columnGutters: [{
+				track: 1,
+				element: $('.gutter').get(0),
+			}],
+			columnMinSizes: { 0: 300 }
+		})
+	} else {
+		$('.gutter').css('display', 'none');
 	}
 }
 
