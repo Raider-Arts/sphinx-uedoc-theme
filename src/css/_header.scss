@@ -207,7 +207,7 @@ div#nav-menu {
     transform: scaleY(1);
 
     @include breakpoint(max-md){
-      height: 0;
+      transform: scaleY(0);
     }
   }
 }
