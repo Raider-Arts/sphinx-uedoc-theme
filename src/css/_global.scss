@@ -12,9 +12,13 @@ body {
 
 div.documentwrapper {
   position: relative;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 350px 1px 1fr;
+  // display: flex;
+  // flex-direction: row;
 }
+
+
 
 @include headings('.toctree-wrapper p.caption') {
 	font-size: 1.5em;

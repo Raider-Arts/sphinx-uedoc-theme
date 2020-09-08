@@ -1,6 +1,5 @@
 import './scripts/index';
-import './css/theme.scss';
-import '@fortawesome/fontawesome-free/css/all.css';
+import './css/theme.scss'; 
 // import { retriveTemplatePath, readFile } from './scripts/utilities';
 // var color_schemes = require('./config/color_schemes.json_t');
 
