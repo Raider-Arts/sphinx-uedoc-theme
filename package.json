@@ -6,6 +6,10 @@
   "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "autoprefixer": "^9.8.6",
     "chroma-js": "^2.1.0",
     "clean-webpack-plugin": "^3.0.0",
