@@ -62,7 +62,11 @@ numfig = True
 #option for theme
 html_theme_options = {
     'quicklinks': [{'name': 'Unreal Website', 'link': 'https://www.unrealengine.com/en-US/',
-                    'subnav': [{'name': 'subnav Website1', 'link': 'https://www.unrealengine.com/en-US/'}]},
+                    'subnav': [ {'name': 'subnav Website1', 'link': 'https://www.unrealengine.com/en-US/'},
+                                {'name': 'subnav Website2', 'link': 'https://www.unrealengine.com/en-US/'},
+                                {'name': 'subnav Website3', 'link': 'https://www.unrealengine.com/en-US/'},
+                                {'name': 'subnav Website4', 'link': 'https://www.unrealengine.com/en-US/'}
+                    ]},
                     {'name': 'Unreal Website1', 'link': 'https://www.unrealengine.com/en-US/'},
                     {'name': 'Unreal Website2', 'link': 'https://www.unrealengine.com/en-US/'},
                     {'name': 'Unreal Website3', 'link': 'https://www.unrealengine.com/en-US/'},
