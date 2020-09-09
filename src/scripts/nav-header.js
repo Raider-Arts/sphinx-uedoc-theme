@@ -24,6 +24,21 @@ export function toggleNavMenu() {
 	navopen = !navopen;
 }
 
+
+function positionSubMenu() {
+	console.log('position')
+	var submenus = $('.uedoc-nav-submenu');
+	submenus.each((index,submenu) => {
+		console.log($(submenu));
+		var pos = $(submenu).parent().position();
+		var size = $(submenu).parent().outerWidth();
+		$(submenu).css('left', pos.left + 'px');
+		$(submenu).css('width', size + 'px');
+	});
+}
+
+$(window).on('load', positionSubMenu)
+
 /**
  * Register Windows Callbacks
  */
