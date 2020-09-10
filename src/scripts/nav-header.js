@@ -24,7 +24,9 @@ export function toggleNavMenu() {
 	navopen = !navopen;
 }
 
-
+/**
+ * Position and reszize each submenus
+ */
 function positionSubMenu() {
 	console.log('position')
 	var submenus = $('.uedoc-nav-submenu');
@@ -37,11 +39,12 @@ function positionSubMenu() {
 	});
 }
 
-$(window).on('load', positionSubMenu)
 
 /**
  * Register Windows Callbacks
  */
+
+$(window).on('load', positionSubMenu)
 
 $(window).on('load', function () {
 	$('#head div.hamburger-nav').on('click', toggleNavMenu)
