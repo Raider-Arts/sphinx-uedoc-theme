@@ -77,6 +77,8 @@ div#nav-menu {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
+      transition: left 0.4s ease-out;
+      left: 100vw !important;
     }
 
     li {
@@ -84,10 +86,21 @@ div#nav-menu {
 
       ul {
         display: none;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 100%;
+        width: 100% !important;
+        top: 0 !important;
       }
     }
   }
 }
+
+div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
+  visibility: visible !important;
+  left: 0 !important;
+} 
 
 .uedoc-header,
 #nav-menu .nav-menu-wrapper {

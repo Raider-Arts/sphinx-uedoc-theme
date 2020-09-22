@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { isMobile } from './utilities';
 
 var navopen = true
 
@@ -40,9 +41,28 @@ function positionSubMenu() {
 }
 
 
+function mobileSubMenuAction() {
+	console.log($('.uedoc-nav-submenu'))
+	$('.uedoc-nav-submenu').parent().on('click', function () {
+		if (isMobile()) {
+			$(this).children('.uedoc-nav-submenu').addClass('opened')
+		}
+	})
+}
+
+
 /**
  * Register Windows Callbacks
  */
+$(window).on('load', mobileSubMenuAction)
+
+//close the mobile submenu
+$(document).on('click', function (event) {
+	var $target = $(event.target);
+	if (!$target.closest('#quicklinks li').length) {
+		$('.uedoc-nav-submenu').removeClass('opened');
+	}
+});
 
 $(window).on('load', positionSubMenu)
 
