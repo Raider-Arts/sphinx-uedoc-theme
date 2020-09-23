@@ -65,6 +65,7 @@ $(document).on('click', function (event) {
 });
 
 $(window).on('load', positionSubMenu)
+$(window).on('resize', positionSubMenu)
 
 $(window).on('load', function () {
 	$('#head div.hamburger-nav').on('click', toggleNavMenu)
