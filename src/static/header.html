@@ -1,12 +1,13 @@
 {% macro rendernav() %}
 	{% for link in theme_quicklinks %}
-		<li role="menuitem">
-			<a href="{{link['link'] if link['link'] else '#'}}"><p>{{link['name']}}</p></a>
+		<li class="{{'has-submenu' if ('subnav' in link) else ''}}"role="menuitem">
+			<a href="{{link['link'] if link['link'] else '#'}}"><p>{{link['name']|upper}}</p></a>
 		{% if 'subnav' in link %}
 			<ul class="uedoc-nav-submenu">
+				<li role="menuitem" class="submenu-header">{{link['name']|upper}}</li>
 				{% for sublink in link['subnav'] %}
 				<li role="menuitem">
-					<a href="{{sublink['link'] if sublink['link'] else '#'}}"><p>{{sublink['name']}}</p></a>
+					<a href="{{sublink['link'] if sublink['link'] else '#'}}"><p>{{sublink['name']|upper}}</p></a>
 				</li>
 				{% endfor %}
 			</ul>

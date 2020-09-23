@@ -73,12 +73,23 @@ div#nav-menu {
     height: 100%;
     overflow: hidden scroll;
 
+    .submenu-header{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-color: #333;
+      color: #8e8e8e;
+      font-size: 1.2em;
+      background-color: #1d1d1d;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
-      transition: left 0.4s ease-out;
+      transition: left 0.2s ease-out;
       left: 100vw !important;
+      padding-top: 0 !important;
     }
 
     li {
@@ -86,7 +97,6 @@ div#nav-menu {
       max-height: 45px;
 
       ul {
-        display: none;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -158,6 +168,23 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
   background-size: 50px auto;
 }
 
+.has-submenu {
+  & > a {
+    &::before{
+      font-family: 'Font Awesome 5 Free';
+      content: '\f105';
+      font-weight: 900;
+      display: none;
+    }
+    
+    & > svg {
+      position: absolute;
+      right: 1rem;
+      color: var(--clr-text-primary);
+    }
+  }
+}
+
 .uedoc-quicklinks {
   display: flex;
   flex-direction: row;
@@ -167,6 +194,23 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
   height: 100%;
   padding: 0;
   margin: 0;
+
+  .submenu-header{
+    cursor: pointer;
+    display: none;
+
+    &::before{
+      font-family: 'Font Awesome 5 Free';
+      content: '\f104';
+      font-weight: 900;
+      display: none;
+    }
+
+    svg {
+      position: absolute;
+      left: 1rem;
+    }
+  }
 
   li {
     // position: relative;
@@ -188,7 +232,7 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
     margin: 0;
     font-size: 0.85em;
   }
-
+  
   a {
     display: block;
     font-family: OpenSans, sans-serif, arial;

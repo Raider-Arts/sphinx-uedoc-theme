@@ -36,33 +36,28 @@ function positionSubMenu() {
 		var pos = $(submenu).parent().position();
 		var size = $(submenu).parent().outerWidth();
 		$(submenu).css('left', pos.left + 'px');
-		$(submenu).css('width', size + 'px');
+		// $(submenu).css('width', size + 'px');
 	});
 }
 
 
 function mobileSubMenuAction() {
-	console.log($('.uedoc-nav-submenu'))
 	$('.uedoc-nav-submenu').parent().on('click', function () {
 		if (isMobile()) {
 			$(this).children('.uedoc-nav-submenu').addClass('opened')
 		}
 	})
-}
 
+	$('.uedoc-nav-submenu li.submenu-header').on('click', function (event) {
+		$(this).parent().removeClass('opened');
+		event.stopPropagation();
+	})
+}
 
 /**
  * Register Windows Callbacks
  */
 $(window).on('load', mobileSubMenuAction)
-
-//close the mobile submenu
-$(document).on('click', function (event) {
-	var $target = $(event.target);
-	if (!$target.closest('#quicklinks li').length) {
-		$('.uedoc-nav-submenu').removeClass('opened');
-	}
-});
 
 $(window).on('load', positionSubMenu)
 $(window).on('resize', positionSubMenu)
@@ -71,7 +66,7 @@ $(window).on('load', function () {
 	$('#head div.hamburger-nav').on('click', toggleNavMenu)
 })
 
-$(window).on('resize', () => {
+$(window).on('resize', function () {
 	animateNavMenu(false)
 	navopen = true;
 })
