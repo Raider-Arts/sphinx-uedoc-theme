@@ -77,10 +77,10 @@ div#nav-menu {
       display: flex;
       align-items: center;
       justify-content: center;
-      border-color: #333;
-      color: #8e8e8e;
+      border-color: setLightness(var(--clr-primary), 20%);
+      color: setLightness(var(--clr-primary), 56%);
       font-size: 1.2em;
-      background-color: #1d1d1d;
+      background-color: setLightness(var(--clr-primary), 11%);
     }
 
     ul {
