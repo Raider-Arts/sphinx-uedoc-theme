@@ -322,17 +322,34 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
 
   @include breakpoint(max-md) {
     display: flex;
+    margin-left: auto;
+  }
+}
+
+div.header-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  height: 100%;
+
+  @include breakpoint(max-md) {
+    width: 100%;
+    margin-left: unset;
+    
+    & > * {
+      width: 100%;
+    }
   }
 }
 
 div.header-button {
   background: var(--clr-secondary);
-  margin-left: auto;
+  padding: 0 1em;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1em;
-  height: 100%;
 
   & > * {
     text-shadow: none;
