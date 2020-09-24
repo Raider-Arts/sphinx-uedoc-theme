@@ -99,9 +99,14 @@ div.search_page {
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
       content: '\f07c';
+      display: none;
+    }
+    
+    svg {
       position: absolute;
       left: 0;
-		}
+      top: 0.8rem;
+    }
 		
 		a:hover{
 			color: var(--clr-secondary)
