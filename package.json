@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Unreal Engine Documentation inspired theme for Sphinx",
   "main": "index.js",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
