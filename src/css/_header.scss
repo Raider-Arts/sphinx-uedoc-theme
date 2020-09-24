@@ -23,13 +23,6 @@ div#nav-menu {
     right: 0;
     z-index: 1012;
     justify-content: flex-end;
-
-    div.header-button {
-      height: unset;
-      margin-top: auto;
-      margin-left: unset;
-      min-height: 55px;
-    }
   }
 }
 
@@ -315,6 +308,7 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
 
 .uedoc-header .hamburger-nav {
   display: none;
+  padding: 0 1em;
 
   svg {
     font-size: 2em;
@@ -328,20 +322,34 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
 
 div.header-end {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
+  flex-direction: column;
   margin-left: auto;
   height: 100%;
+
+  #search_container {
+    display: none;
+
+    @include breakpoint(max-md) {
+      display: block;
+      width: 90%;
+
+      .searchbutton {
+        opacity: 1;
+      }
+    }
+  }
 
   @include breakpoint(max-md) {
     width: 100%;
     margin-left: unset;
-    
-    & > * {
-      width: 100%;
-    }
+    height: unset;
+    margin-top: auto;
+    box-shadow: 0 -4px 15px -4px rgba(0,0,0,.5);
   }
 }
+
 
 div.header-button {
   background: var(--clr-secondary);
@@ -372,6 +380,13 @@ div.header-button {
       display: inline-block;
       vertical-align: middle;
     }
+  }
+
+  @include breakpoint(max-md){
+    padding: 0;
+    height: unset;
+    margin-left: unset;
+    min-height: 55px;
   }
 }
 /*#endregion Header */

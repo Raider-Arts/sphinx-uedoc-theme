@@ -44,14 +44,14 @@
 			</div>
 			{% block uedoc_header_right %}
 			<div class="header-end">
-				{#{% if theme_header_search %}
+				{% if theme_header_search %}
 				<div id="search_container">
 					<form method="get" action="{{ pathto('search') }}">
 						<button type="submit" class="searchbutton" > </button>
 						<input type="text" placeholder="Search Documentation..." class="searchbox" name="q" aria-labelledby="searchlabel" autocomplete="off">
 					</form>
 				</div>
-				{% endif %} #}
+				{% endif %}
 			{% if theme_header_button %}
 				<div class="header-button">
 					<a href="{{theme_header_button['link']}}">

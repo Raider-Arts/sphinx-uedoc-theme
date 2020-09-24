@@ -69,14 +69,17 @@ div#search_container {
 		position: absolute;
 		right: 5px;
 		opacity: 0.25;
+		background-color: transparent;
+
 	}
 
 	.searchbox {
 		color: var(--clr-text-primary-hsl);
 		opacity: 0.75;
+		box-sizing: border-box;
 		margin: 0;
 		padding: 13px 42px 13px 17px;
-		width: 404px;
+		width: 100%;
 		font-family: Brutal_Regular, Verdana, Arial, sans serif;
 		font-size: 14px;
 		border: 1px solid setLightness(var(--clr-background), 88%);
