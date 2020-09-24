@@ -40,18 +40,28 @@ function positionSubMenu() {
 	});
 }
 
-
+/**
+ * Behaviour for the mobile menu (closing/opening, navigate sub menus)
+ */
 function mobileSubMenuAction() {
 	$('.uedoc-nav-submenu').parent().on('click', function () {
 		if (isMobile()) {
 			$(this).children('.uedoc-nav-submenu').addClass('opened')
 		}
-	})
+	});
 
 	$('.uedoc-nav-submenu li.submenu-header').on('click', function (event) {
 		$(this).parent().removeClass('opened');
 		event.stopPropagation();
-	})
+	});
+
+	$('#nav-menu').on('click', function (event) {
+		if (event.target !== this) return;
+		toggleNavMenu()
+		$('.uedoc-nav-submenu li.submenu-header').each(function () {
+			$(this).parent().removeClass('opened');
+		})
+	});
 }
 
 /**
