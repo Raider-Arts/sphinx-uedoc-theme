@@ -69,6 +69,14 @@ div#nav-menu {
     }
   }
 
+  li.has-submenu {
+    & > a {
+      & > svg{
+        display: block;
+      }
+    }
+  }
+
   div.uedoc-quicklinks-wrapper {
     height: 100%;
     overflow: hidden scroll;
@@ -181,6 +189,7 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
       position: absolute;
       right: 1rem;
       color: var(--clr-text-primary);
+      display: none;
     }
   }
 }
