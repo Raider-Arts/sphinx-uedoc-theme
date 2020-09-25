@@ -331,6 +331,12 @@ div.header-end {
   #search_container {
     display: none;
 
+    .searchbox {
+      border: 0px;
+      border-radius: 5px;
+      background: setLightness(var(--clr-primary), 25%);
+    }
+
     @include breakpoint(max-md) {
       display: block;
       width: 90%;
