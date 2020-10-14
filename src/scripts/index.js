@@ -8,6 +8,7 @@ import logo from '../images/sphinx-ue-logo.svg';
 import { library, dom, config } from'@fortawesome/fontawesome-svg-core';
 import { faLink, faSearch, faRss, faBars, faAngleLeft, faAngleRight, faChevronUp, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { loadSvgFromString } from './utilities'
 
 config.searchPseudoElements = true;
 config.observeMutations = true;
@@ -16,5 +17,5 @@ library.add(faLink, faSearch, faRss, faBars, fab, faAngleLeft, faAngleRight, faC
 dom.watch(); 
 
 $(window).on('load', function () {
-	$("#logo").attr('src', "_static/fonts/"+logo)
+	$("#logo").append(loadSvgFromString(logo))
 });
