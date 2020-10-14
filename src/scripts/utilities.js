@@ -42,6 +42,16 @@ export function isOutOfVerticalSroll(parentDiv, childDiv, offset = 0) {
 }
 
 /**
+ * Creates a DOM SVG Element from a string
+ * @param {*} svgstr 
+ */
+export function loadSvgFromString(svgstr) {
+	const parser = new DOMParser();
+	const svg = document.importNode(parser.parseFromString(svgstr, "application/xml").documentElement, true);
+	return svg
+}
+
+/**
  * Register events
  */
 $(window).on('load', function () {
