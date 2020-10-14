@@ -157,16 +157,17 @@ div.uedoc-quicklinks-wrapper li ul.uedoc-nav-submenu.opened {
   }
 }
 
+.logo-wrapper{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
 .logo{
   width: 3.7em;
   height: 3.7em;
   margin-left: 0.5em;
   flex-shrink: 0;
-}
-
-.uedoc-logo {
-  background: url('../images/UE-Logo-Icon-White.png') 50% no-repeat;
-  background-size: 50px auto;
 }
 
 .has-submenu {
