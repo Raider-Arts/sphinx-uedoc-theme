@@ -55,7 +55,7 @@ module.exports = {
         sideEffects: true,
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /^.*?(?=fonts).*?\.(woff|woff2|eot|ttf|otf|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -68,7 +68,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /^.*?(?=images).*?\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -79,6 +79,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /^.*?(?=images).*?\.svg$/,
+        use: 'raw-loader'
       },
       {
         test: /\.json_t$/,
