@@ -1,3 +1,4 @@
+#python generated stuff
 .DS_Store
 *.pyc
 
@@ -7,7 +8,7 @@ dist
 demo/build/*
 node_modules
 __pycache__
-.vscode
 Pipfile*
 
+#test folder
 testdoc

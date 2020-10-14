@@ -1,0 +1,73 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Dev Tools",
+			"dependsOn": [
+				"sphinx autobuild",
+				"webpack dev"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Dev Tools (testdoc)",
+			"dependsOn": [
+				"sphinx autobuild testdoc",
+				"webpack dev"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Prod Build",
+			"dependsOn": [
+				"webpack prod"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Server only",
+			"dependsOn": [
+				"sphinx autobuild"
+			],
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "sphinx autobuild",
+			"type": "shell",
+			"command": "conda activate py37-heightfield && cd demo && make clean && cd .. && sphinx-autobuild -a demo demo/_build/html --watch uedoc_theme --port=5500 --delay 3",
+			"presentation": {
+				"group": "dev"
+			}
+		},
+		{
+			"label": "sphinx autobuild testdoc",
+			"type": "shell",
+			"command": "conda activate py37-designer && sphinx-autobuild -E -a testdoc/doc testdoc/doc/_build/html --watch uedoc_theme --port=5500 --delay 3",
+			"presentation": {
+				"group": "dev"
+			}
+		},
+		{
+			"label": "webpack dev",
+			"type": "shell",
+			"command": "npx webpack --config webpack.dev.js",
+			"presentation": {
+				"group": "dev"
+			}
+		},
+		{
+			"label": "webpack prod",
+			"type": "shell",
+			"command": "npx webpack --config webpack.prod.js",
+			"presentation": {
+				"group": "dev"
+			}
+		}
+	]
+}
