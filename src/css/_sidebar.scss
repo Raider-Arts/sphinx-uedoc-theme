@@ -72,7 +72,6 @@ div#sidebar {
       left: 25px;
       content: '';
       position: absolute;
-      top: 15px;
       width: 11px;
       height: 11px;
       cursor: pointer;
@@ -140,13 +139,23 @@ div#sidebarwidgets {
 
 .sidebar-item-expanded {
   span.button {
-    background: url('../images/button-open.png') no-repeat !important;
+    &::after {
+      font-family: 'Font Awesome 5 Free';
+			content: '\f068';
+			display: none;
+			font-weight: 900;
+    }
   }
 }
 
 .sidebar-item-collapsed {
   span.button {
-    background: url('../images/button-closed.png') no-repeat !important;
+    &::after {
+      font-family: 'Font Awesome 5 Free';
+			content: '\f067';
+			display: none;
+			font-weight: 900;
+    }
   }
 }
 
