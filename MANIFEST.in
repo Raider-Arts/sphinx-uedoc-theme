@@ -1,0 +1,12 @@
+include *.txt
+include LICENSE
+recursive-include uedoc_theme *.conf
+recursive-include uedoc_theme *.css
+recursive-include uedoc_theme *.eot
+recursive-include uedoc_theme *.html
+recursive-include uedoc_theme *.js
+recursive-include uedoc_theme *.svg
+recursive-include uedoc_theme *.ttf
+recursive-include uedoc_theme *.woff
+recursive-include uedoc_theme *.woff2
+recursive-include uedoc_theme *.py
