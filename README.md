@@ -21,3 +21,13 @@ In Sphinx `conf.py`:
 >html_theme_options = {'put here the values for the options'}
 >...
 >```
+
+## Customizable Options
+
+This is a list of all the theme options:
+
+> TODO: list all the options from theme.conf
+
+## Development Requisites
+
+> TODO: Development guide
