@@ -35,7 +35,7 @@ This is a list of all the theme options:
 |show_totop_button|true| show or hide the go to top arrow button in the footer area of the theme|
 |header_button|None| a dictionary with a link and a name for right button of the navbar of the theme, if left blank no button would be rendered|
 |no_logo|False| if set to true the default logo is hidden, if no logo is specified the default logo is always shown if you want to hide it set this to true|
-|header_search| whether or not show the search bar in the navigation menu in mobile|
+|header_search|true| whether or not show the search bar in the navigation menu in mobile|
 
 ## Customizing the Color Scheme
 #TODO: add the guide to customizing the color scheme
