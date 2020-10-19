@@ -22,8 +22,9 @@ jobs:
       #     cp -r docs/_build/html/* gh-pages/
       #     cd gh-pages
       - uses: actions/checkout@v2
-        ref: 'gh-pages'
-        path: '/github/workspace/gh-pages'
+        with:
+          ref: 'gh-pages'
+          path: '/github/workspace/gh-pages'
       
       - name: "Copy to gh-pages"
         run: |
