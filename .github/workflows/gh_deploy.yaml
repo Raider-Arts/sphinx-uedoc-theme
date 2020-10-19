@@ -1,0 +1,42 @@
+---
+name: "GitHub Pages"
+
+on: push
+
+jobs:
+  gh-release:
+    name: "ghpages release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # - uses: actions/setup-python@v2
+      - uses: actions/checkout@v2
+      - name: "Setup"
+        run: |
+            apt update -y
+            apt-get install git -y
+            echo $(git --version)
+            echo $(pwd)
+        uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: demo/
+      
+      - name: "Commit build files"
+        run: echo https://github.com/$GITHUB_REPOSITORY.git
+        # run: |
+        #   git clone https://github.com/$GITHUB_REPOSITORY.git --branch gh-pages --single-branch gh-pages
+        #   cp -r docs/_build/html/* gh-pages/
+        #   cd gh-pages
+        #   git config --local user.email "action@github.com"
+        #   git config --local user.name "GitHub Action"
+        #   git add .
+        #   git commit -m "Update documentation" -a || true
+        #   # The above command will fail if no changes were present, so we ignore
+        #   # the return code.
+      
+      # - name: "Push build"
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     branch: gh-pages
+      #     directory: gh-pages
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
