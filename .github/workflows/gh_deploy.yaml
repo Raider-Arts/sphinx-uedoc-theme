@@ -16,17 +16,20 @@ jobs:
         with:
           docs-folder: "/github/workspace/demo/"
       
-      - name: "Commit build files"
+      - name: "Clone ghpages"
         run: |
           git clone https://github.com/${{github.repository}}.git --branch gh-pages --single-branch gh-pages
           cp -r docs/_build/html/* gh-pages/
           cd gh-pages
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Update Demo Build" -a || true
-          # The above command will fail if no changes were present, so we ignore
-          # the return code.
+
+      - name: "Commit build"
+        uses: EndBug/add-and-commit@v5
+        with:
+          cwd: "./gh-pages/"
+          message: "Update Demo Build"
+        env:
+          # This is necessary in order to push a commit to the repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
       
       - name: "Push build"
         uses: ad-m/github-push-action@master
