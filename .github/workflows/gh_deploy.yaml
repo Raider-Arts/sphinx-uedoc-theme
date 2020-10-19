@@ -15,17 +15,11 @@ jobs:
         uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "/github/workspace/demo/"
-      
-      # - name: "Clone ghpages"
-      #   run: |
-      #     git clone https://github.com/${{github.repository}}.git --branch gh-pages --single-branch gh-pages
-      #     cp -r docs/_build/html/* gh-pages/
-      #     cd gh-pages
+
       - uses: actions/checkout@v2
         with:
           ref: 'gh-pages'
           path: 'gh-pages'
-
 
       - name: "Copy to gh-pages"
         run: |
@@ -34,17 +28,11 @@ jobs:
       - name: "list files"
         run: |
             ls -R
-      # - name: "Commit build"
-      #   uses: EndBug/add-and-commit@v5
-      #   with:
-      #     message: "Update Demo Build"
-      #   env:
-      #     # This is necessary in order to push a commit to the repo
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-      
-      # - name: "Push build"
-      #   uses: ad-m/github-push-action@master
-      #   with:
-      #     branch: gh-pages
-      #     directory: gh-pages
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: "Commit build"
+        uses: EndBug/add-and-commit@v5
+        with:
+          cwd: 'gh-pages'
+          message: "Update Demo Build"
+        env:
+          # This is necessary in order to push a commit to the repo
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
