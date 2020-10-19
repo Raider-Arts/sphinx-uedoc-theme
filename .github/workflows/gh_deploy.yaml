@@ -9,14 +9,6 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: "Setup"
-        run: |
-            apt update -y
-            apt-get install git -y
-            echo $(git --version)
-            echo $(pwd)
-            cd $GITHUB_WORKSPACE
-            ls
       # - uses: actions/setup-python@v2
       - uses: actions/checkout@v2
       - name: "Build demo"
