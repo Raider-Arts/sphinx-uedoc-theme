@@ -27,9 +27,9 @@ jobs:
           path: 'gh-pages'
 
 
-      # - name: "Copy to gh-pages"
-      #   run: |
-      #       cp -r /github/workspace/demo/_build/html/* /github/workspace/gh-pages/
+      - name: "Copy to gh-pages"
+        run: |
+            cp -r demo/_build/html/* gh-pages
 
       - name: "list files"
         run: |
