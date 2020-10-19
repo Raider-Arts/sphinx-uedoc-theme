@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: 'gh-pages'
-          path: '/github/workspace/gh-pages'
+          path: 'gh-pages'
       
       - name: "Copy to gh-pages"
         run: |
