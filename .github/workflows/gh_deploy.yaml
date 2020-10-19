@@ -26,13 +26,14 @@ jobs:
           ref: 'gh-pages'
           path: 'gh-pages'
 
+
+      - name: "Copy to gh-pages"
+        run: |
+            cp -r /github/workspace/docs/_build/html/* /github/workspace/gh-pages/
+
       - name: "list files"
         run: |
-            ls
-      # - name: "Copy to gh-pages"
-      #   run: |
-      #       cp -r /github/workspace/docs/_build/html/* /github/workspace/gh-pages/
-
+            ls -R
       # - name: "Commit build"
       #   uses: EndBug/add-and-commit@v5
       #   with:
