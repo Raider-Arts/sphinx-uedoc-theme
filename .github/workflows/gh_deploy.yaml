@@ -29,7 +29,7 @@ jobs:
 
       - name: "Copy to gh-pages"
         run: |
-            cp -r /github/workspace/docs/_build/html/* /github/workspace/gh-pages/
+            cp -r /github/workspace/demo/_build/html/* /github/workspace/gh-pages/
 
       - name: "list files"
         run: |
