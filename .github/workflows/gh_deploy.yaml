@@ -25,9 +25,6 @@ jobs:
         run: |
             cp -r demo/_build/html/* gh-pages
 
-      - name: "list files"
-        run: |
-            ls -R
       - name: "Commit build"
         uses: EndBug/add-and-commit@v5
         with:
