@@ -25,22 +25,25 @@ jobs:
         with:
           ref: 'gh-pages'
           path: 'gh-pages'
-      
-      - name: "Copy to gh-pages"
-        run: |
-            cp -r /github/workspace/docs/_build/html/* /github/workspace/gh-pages/
 
-      - name: "Commit build"
-        uses: EndBug/add-and-commit@v5
-        with:
-          message: "Update Demo Build"
-        env:
-          # This is necessary in order to push a commit to the repo
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+      - name: "list files"
+        run: |
+            ls
+      # - name: "Copy to gh-pages"
+      #   run: |
+      #       cp -r /github/workspace/docs/_build/html/* /github/workspace/gh-pages/
+
+      # - name: "Commit build"
+      #   uses: EndBug/add-and-commit@v5
+      #   with:
+      #     message: "Update Demo Build"
+      #   env:
+      #     # This is necessary in order to push a commit to the repo
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
       
-      - name: "Push build"
-        uses: ad-m/github-push-action@master
-        with:
-          branch: gh-pages
-          directory: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: "Push build"
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     branch: gh-pages
+      #     directory: gh-pages
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
