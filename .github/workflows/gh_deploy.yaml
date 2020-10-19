@@ -16,16 +16,22 @@ jobs:
         with:
           docs-folder: "/github/workspace/demo/"
       
-      - name: "Clone ghpages"
+      # - name: "Clone ghpages"
+      #   run: |
+      #     git clone https://github.com/${{github.repository}}.git --branch gh-pages --single-branch gh-pages
+      #     cp -r docs/_build/html/* gh-pages/
+      #     cd gh-pages
+      - uses: actions/checkout@v2
+        ref: 'gh-pages'
+        path: '/github/workspace/gh-pages'
+      
+      - name: "Copy to gh-pages"
         run: |
-          git clone https://github.com/${{github.repository}}.git --branch gh-pages --single-branch gh-pages
-          cp -r docs/_build/html/* gh-pages/
-          cd gh-pages
+            cp -r /github/workspace/docs/_build/html/* /github/workspace/gh-pages/
 
       - name: "Commit build"
         uses: EndBug/add-and-commit@v5
         with:
-          cwd: "./gh-pages/"
           message: "Update Demo Build"
         env:
           # This is necessary in order to push a commit to the repo
