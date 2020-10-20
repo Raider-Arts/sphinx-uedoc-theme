@@ -266,6 +266,7 @@ div.gutter {
   cursor: pointer;
   border: 1px solid setLightness(var(--clr-primary), 63%);
   font-size: 2.5em;
+  display: none;
 
   span {
     opacity: 0.5;
@@ -275,6 +276,7 @@ div.gutter {
     line-height: 1em;
     font-size: 1.5em;
     top: 145px;
+    display: block;
   }
 }
 

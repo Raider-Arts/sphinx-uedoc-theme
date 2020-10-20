@@ -7,12 +7,6 @@ var sideopen = false
  * Setup the sidebar based on the screen size
  */
 export function displayMobileSidebar() {
-	if (isMobile()) {
-		$('#navigation').css('display', 'block')
-	} else {
-		$('#navigation').css('display', 'none')
-	}
-	
 	$('#sidebar').addClass('sidebar-retracted')
 	$('#navigation').css("left", "0")
 	$('#navigation').css("transform", "translateY(0) rotate(0deg)")
@@ -21,7 +15,7 @@ export function displayMobileSidebar() {
 
 $(window).on('load', function () {
 	displayMobileSidebar()
-	$('#navigation').click(function () {
+	$('#navigation').on('click', function () {
 		if (!sideopen) {
 			$(this).css("transform", "translateY(0) rotate(-180deg)")
 			$(this).css("left", "300px")
