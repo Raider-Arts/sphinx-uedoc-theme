@@ -52,9 +52,6 @@ html_static_path = ['_static']
 # Path to themes
 html_theme_path = ['../']
 
-# for ghpages
-html_baseurl = 'https://raider-arts.github.io/sphinx-uedoc-theme/'
-
 # override the pygments of the theme
 # pygments_style = 'abap'
 
