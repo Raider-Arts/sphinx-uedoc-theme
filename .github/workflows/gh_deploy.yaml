@@ -23,12 +23,12 @@ jobs:
 
       - name: "Copy to gh-pages"
         run: |
-            cp -rv demo/_build/html/* gh-pages
+            cp -rv demo/_build/html/. gh-pages
 
       - name: "Commit build"
         uses: EndBug/add-and-commit@v5
         with:
-          cwd: '/github/workspace/gh-pages'
+          cwd: 'gh-pages'
           branch: 'gh-pages'
           message: "Update Demo Build"
         env:
