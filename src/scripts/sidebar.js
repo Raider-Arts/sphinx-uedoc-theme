@@ -48,10 +48,11 @@ export function calcSidebarHeight(offset = 0) {
 	}
 	$('div#sidebarwidgets').css('height', String(sidebarHeight-($('div#navigation').height()+$('div#searchbox').height()))+'px')
 }
-$(window).on('load', () => calcSidebarHeight())
-$(window).on('resize', () => calcSidebarHeight())
-// Resize sidebar also on scroll when the header is outside the screen
-$(window).on('scroll', function (e) {
+
+/**
+ * Set the theme sidebar height based on page state
+ */
+export function setSidebarHeight() {
 	const windowScroll = window.scrollY;
 	const headerSize = ($('#head').height() + $('div.related').height());
 	if (windowScroll < headerSize) {
@@ -59,7 +60,12 @@ $(window).on('scroll', function (e) {
 	} else {
 		calcSidebarHeight(headerSize);
 	}
-})
+}
+
+$(window).on('load', () => setSidebarHeight())
+$(window).on('resize', () => setSidebarHeight())
+// Resize sidebar also on scroll when the header is outside the screen
+$(window).on('scroll', () => setSidebarHeight())
 /**
  * Setup the height size of the localtoc sidebar
  */
