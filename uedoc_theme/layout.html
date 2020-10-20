@@ -1,8 +1,8 @@
 {% extends "basic/layout.html" %}
 
 {# Webpack #}
-{% set script_files = script_files + [pathto('_static/js/theme.js', 1)] %}
-{% set css_files = css_files + [pathto('_static/css/theme.css', 1)] %}
+{% set script_files = script_files + ['_static/js/theme.js'] %}
+{% set css_files = css_files + ['_static/css/theme.css'] %}
 
 {# Setting up scripts #}
 {% set reldelim1 = ">" %}
