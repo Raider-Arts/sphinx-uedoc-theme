@@ -37,7 +37,6 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -52,6 +51,9 @@ html_static_path = ['_static']
 
 # Path to themes
 html_theme_path = ['../']
+
+# for ghpages
+html_baseurl = ['https://raider-arts.github.io/sphinx-uedoc-theme/']
 
 # override the pygments of the theme
 # pygments_style = 'abap'
