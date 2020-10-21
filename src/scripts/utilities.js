@@ -28,19 +28,6 @@ export function readFile(url, onfilecallback) {
 }
 
 /**
- * Check if and elment is out off the vertical box of the selected parent
- * @param {JQuery Object} parentDiv 
- * @param {JQuery Object} childDiv 
- * @param {float} offset 
- */
-export function isOutOfVerticalSroll(parentDiv, childDiv, offset = 0) {
-	var parentSize = parentDiv.height();
-	var parentScroll = parentDiv.scrollTop();
-  var childvPos = childDiv.position().top;
-	return (parentSize + parentScroll - offset) < childvPos || childvPos < 0.0;
-}
-
-/**
  * Creates a DOM SVG Element from a string
  * @param {*} svgstr 
  */
