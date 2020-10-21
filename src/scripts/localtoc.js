@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import { isOutOfVerticalSroll } from "./utilities";
 
 /**
  * Hightlight the correct locatoc list item based on its position when the user scroll the page
@@ -28,11 +27,9 @@ $(window).on('load', function () {
 			var toctext = $($(this).children().get(0)).attr('href')
 			toctext = toctext.substr(1)
 			if (topmost.attr('id') == toctext) {
-				if (isOutOfVerticalSroll(tocscroll, $(this), 50)) {
-					tocscroll.stop(true, false).animate({
-						scrollTop: $(this).position().top
-					}, 200);
-				}
+				tocscroll.scrollTop(
+					$(this).offset().top - tocscroll.offset().top + tocscroll.scrollTop()
+				);
 				$(this).addClass('current-reading')
 			} else {
 				$(this).removeClass('current-reading')
