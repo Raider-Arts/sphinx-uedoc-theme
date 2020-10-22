@@ -1,13 +1,14 @@
 # sphinx-uedoc-theme
 Unreal Engine documentation look and feel theme for Python [Sphinx](https://www.sphinx-doc.org/en/master/)
 
-You can see the theme in action on the [**ONLINE DEMO**]()
+You can see the theme in action on the [**ONLINE DEMO**](https://raider-arts.github.io/sphinx-uedoc-theme/)
 
 ## Installation
 
 Install it via pip
 
 > `pip install sphinx-uedoc-theme`
+**NOT YET PUBLISHED ON Pypi (Coming soon)**
 
 ## Usage
 
