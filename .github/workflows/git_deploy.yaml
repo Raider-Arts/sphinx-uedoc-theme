@@ -13,8 +13,6 @@ jobs:
     steps:
       - id: get_version
         uses: battila7/get-version-action@v2
-        env:
-          release_name: sphinx-uedoc-demo-${{ steps.get_version.outputs.version-without-v }}.zip
 
       - uses: actions/setup-python@v2
       - name: Checkout code
@@ -28,7 +26,7 @@ jobs:
 
       - name: Package Wheels
         run: |
-          zip -r ${{env.release_name}} dist/*
+          zip -r sphinx-uedoc-demo-${{ steps.get_version.outputs.version-without-v }}.zip dist/*
 
       - name: Deploy Release
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -36,4 +34,4 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          files: ${{env.release_name}}
+          files: sphinx-uedoc-demo-${{ steps.get_version.outputs.version-without-v }}.zip
