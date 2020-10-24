@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 version_py = os.path.join(os.path.dirname(__file__), 'version.py')
 
 try:
-    version_git = subprocess.check_output(["git", "describe"]).rstrip()
+    version_git = subprocess.check_output(["git", "describe", "--abbrev=0"]).rstrip()
 except:
     with open(version_py, 'r') as fh:
         version_git = open(version_py).read().strip().split('=')[-1].replace('"','')
@@ -23,7 +23,7 @@ with open(version_py, 'w') as fh:
 
 setuptools.setup(
     name="sphinx-uedoc-theme",
-    version="{ver}".format(ver=str(version_git)),
+    version="{ver}".format(ver=version_git.decode("utf-8")),
     author="Luca Faggion",
     author_email="luc-af@live.it",
     description="Unreal engine documentation theme for Python Sphinx",
