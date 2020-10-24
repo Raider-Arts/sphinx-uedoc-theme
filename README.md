@@ -3,6 +3,8 @@ Unreal Engine documentation look and feel theme for Python [Sphinx](https://www.
 
 You can see the theme in action on the [**ONLINE DEMO**](https://raider-arts.github.io/sphinx-uedoc-theme/)
 
+![theme_preview](theme_preview.png)
+
 ## Installation
 
 Install it via pip
@@ -23,9 +25,6 @@ In Sphinx `conf.py`:
 >html_theme_options = {'put here the values for the options'}
 >...
 >```
-
-## Screenshots
-#TODO: place screenshots
 
 ## Customizable Options
 
