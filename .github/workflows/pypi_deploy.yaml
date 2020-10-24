@@ -14,11 +14,6 @@ jobs:
     steps:
       - uses: actions/setup-python@v2
       - uses: actions/checkout@v2
-      - name: "Set release name"
-        run: |
-          export RELEASE_NAME="${{ github.event.repository.name }}-dev"
-          echo "::set-env name=NAME::$RELEASE_NAME"
-        
       - name: "Install Requirements"
         if: success()
         run: |
@@ -28,11 +23,12 @@ jobs:
       - name: "Build Package"
         if: success()
         run: |
-            cd $GITHUB_WORKSPACE
-            python setup.py sdist bdist_wheel
+          python -m pip install -r requirements.txt
+          python -m pip install --user --upgrade setuptools wheel
+          python setup.py sdist bdist_wheel
 
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
-          user: ${{ secrets.PYPI_TOKEN }}
-          password: ${{ secrets.PYPI_PASSWORD }}
+          user: __token__
+          password: ${{ secrets.PYPI_TOKEN }}
