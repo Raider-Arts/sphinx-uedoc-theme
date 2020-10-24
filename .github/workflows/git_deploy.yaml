@@ -5,13 +5,14 @@ on:
 
 name: Create Release
 
+env:
+  release_name: sphinx-uedoc-demo-${{ github.event.release.tag_name }}.zip
+
 jobs:
   git-release:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - env:
-          release-name: sphinx-uedoc-demo-${{ github.event.release.tag_name }}.zip
       - uses: actions/setup-python@v2
       - name: Checkout code
         uses: actions/checkout@v2
@@ -24,7 +25,7 @@ jobs:
 
       - name: Package Wheels
         run: |
-          zip -r $release-name dist/*
+          zip -r ${{env.release_name}} dist/*
 
       - name: Deploy Release
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -32,4 +33,4 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          files: $release-name
+          files: ${{env.release_name}}
