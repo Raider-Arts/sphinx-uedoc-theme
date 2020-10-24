@@ -1,0 +1,37 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+name: Create Release
+
+
+jobs:
+  git-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - id: get_version
+        uses: battila7/get-version-action@v2
+
+      - uses: actions/setup-python@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Wheels
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install --user --upgrade setuptools wheel
+          python setup.py sdist bdist_wheel
+
+      - name: Package Wheels
+        run: |
+          zip -r sphinx-uedoc-demo-${{ steps.get_version.outputs.version-without-v }}.zip dist/*
+
+      - name: Deploy Release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        if: success()
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: sphinx-uedoc-demo-${{ steps.get_version.outputs.version-without-v }}.zip
