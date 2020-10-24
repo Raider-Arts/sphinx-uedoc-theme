@@ -5,14 +5,17 @@ on:
 
 name: Create Release
 
-env:
-  release_name: sphinx-uedoc-demo-${{ github.event.release.tag_name }}.zip
 
 jobs:
   git-release:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
+      - id: get_version
+        uses: battila7/get-version-action@v2
+        env:
+          release_name: sphinx-uedoc-demo-${{ steps.get_version.outputs.version-without-v }}.zip
+
       - uses: actions/setup-python@v2
       - name: Checkout code
         uses: actions/checkout@v2
