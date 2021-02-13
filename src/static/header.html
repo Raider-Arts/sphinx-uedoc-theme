@@ -18,7 +18,7 @@
 
 <div id="head" class="uedoc-header">
 	{% block uedoc_logo %}
-		{%- if logo %}
+		{%- if theme_logo %}
 			<a href="{{ pathto(master_doc)|e }}" class="logo-wrapper">
 				<img class="logo" src="{{ pathto('_static/', 1)|e }}{{theme_logo}}" alt="Logo"/>
 			</a>
